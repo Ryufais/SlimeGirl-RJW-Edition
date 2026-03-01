@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>AA</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>AB</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>AC</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>AD</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>BA</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>BB</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>BC</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>BD</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+     <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>CA</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>CB</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>CC</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>CD</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+       <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>DA</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>DB</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>DC</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+
+    <ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+        <defName>DD</defName>
+        <alternatives>
+            <li>Female</li>
+        </alternatives>
+    </ApparelBodyTypeResolver.PredefinedBodyTypeResolverDef>
+</Defs>
