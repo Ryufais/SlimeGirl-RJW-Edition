@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<PawnKindDef Name="SlimeBasePawnKind" Abstract="True">
+		<combatPower>60</combatPower>
+		<canBeSapper>true</canBeSapper>
+		<race>Rjw_Slime_Blue</race>
+		<maxGenerationAge>30</maxGenerationAge>
+		<invNutrition>0</invNutrition>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+		<apparelColor>(255,255,255)</apparelColor>
+		<apparelMoney>100~500</apparelMoney>
+		<itemQuality>Normal</itemQuality>
+		<apparelAllowHeadgearChance>0.0</apparelAllowHeadgearChance>
+		<initialResistanceRange>2~5</initialResistanceRange>
+		<initialWillRange>1~3</initialWillRange>
+		<!-- <styleItemTags>
+			<li>
+				<tag>Bald</tag>
+				<baseWeight>1.0</baseWeight>
+				<weightFactor>1.0</weightFactor>
+			</li>
+		</styleItemTags> -->
+		<xenotypeSet>
+			<xenotypeChances>
+				<Baseliner MayRequire="Ludeon.RimWorld.Biotech">1</Baseliner>
+				<Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0</Dirtmole>
+				<Genie MayRequire="Ludeon.RimWorld.Biotech">0</Genie>
+				<Hussar MayRequire="Ludeon.RimWorld.Biotech">0</Hussar>
+				<Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0</Sanguophage>
+				<Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0</Neanderthal>
+				<Pigskin MayRequire="Ludeon.RimWorld.Biotech">0</Pigskin>
+				<Impid MayRequire="Ludeon.RimWorld.Biotech">0</Impid>
+				<Waster MayRequire="Ludeon.RimWorld.Biotech">0</Waster>
+				<Yttakin MayRequire="Ludeon.RimWorld.Biotech">0</Yttakin>
+				<Highmate MayRequire="Ludeon.RimWorld.Biotech">0</Highmate>
+			</xenotypeChances>
+		</xenotypeSet>
+		<useFactionXenotypes>false</useFactionXenotypes>
+	</PawnKindDef>
+
+	<PawnKindDef Name="SlimeBasePawnKind_Combat" ParentName="SlimeBasePawnKind" Abstract="True">
+		<isFighter>true</isFighter>
+		<combatPower>75</combatPower>
+		<defaultFactionType>SpaceSubjects</defaultFactionType>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>SlimeStory</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>
+			<min>1000</min>
+			<max>3500</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>MedievalMeleeBasic</li>
+			<li>MedievalMeleeDecent</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind">
+		<defName>Slime_Colonist</defName>
+		<label>slime colonist</label>
+		<isFighter>false</isFighter>
+		<combatPower>60</combatPower>
+		<itemQuality>Normal</itemQuality>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>SlimeStory</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<initialResistanceRange>2~5</initialResistanceRange>
+		<initialWillRange>1~3</initialWillRange>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+		<defaultFactionType>Slime_PlayerFaction</defaultFactionType>
+		<invNutrition>0</invNutrition>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind">
+		<defName>Slime</defName>
+		<label>slime</label>
+		<isFighter>false</isFighter>
+		<combatPower>60</combatPower>
+		<itemQuality>Normal</itemQuality>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>SlimeWild</li>
+					<li>SlimeStory</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<initialResistanceRange>2~5</initialResistanceRange>
+		<initialWillRange>1~3</initialWillRange>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+		<defaultFactionType>SpaceSubjects</defaultFactionType>
+		<invNutrition>0</invNutrition>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind">
+		<defName>Slime_Wild</defName>
+		<label>wild slime</label>
+		<isFighter>false</isFighter>
+		<combatPower>60</combatPower>
+		<itemQuality>Poor</itemQuality>
+		<acceptArrestChanceFactor>0.5</acceptArrestChanceFactor>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>SlimeWild</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<initialResistanceRange>2~5</initialResistanceRange>
+		<initialWillRange>1~3</initialWillRange>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+		<invNutrition>0</invNutrition>
+		<apparelIgnorePollution MayRequire="Ludeon.RimWorld.Biotech">true</apparelIgnorePollution>
+		<techHediffsChance>0.03</techHediffsChance>
+		<techHediffsMoney>50~50</techHediffsMoney>
+		<techHediffsTags>
+			<li>Poor</li>
+		</techHediffsTags>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind">
+		<defName>Slime_Merchant</defName>
+		<label>slime merchant</label>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>SlimeStory</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<defaultFactionType>SpaceSubjects</defaultFactionType>
+		<trader>true</trader>
+		<invNutrition>2</invNutrition>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind">
+		<defName>Slime_Entrepreneur</defName>
+		<label>slime entrepreneur</label>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>SlimeStory</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<defaultFactionType>SpaceSubjects</defaultFactionType>
+		<trader>true</trader>
+		<invNutrition>2</invNutrition>
+		<itemQuality>Good</itemQuality>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind">
+		<defName>Slime_Nucleus</defName>
+		<label>slime nucleus</label>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>SlimeStory</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<defaultFactionType>SpaceSubjects</defaultFactionType>
+		<factionLeader>true</factionLeader>
+		<itemQuality>Good</itemQuality>
+		<invNutrition>2</invNutrition>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind_Combat">
+		<defName>Slime_Enforcer</defName>
+		<label>slime enforcer</label>
+		<invNutrition>1</invNutrition>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind_Combat">
+		<defName>Slime_Executioner</defName>
+		<label>slime executioner</label>
+		<combatPower>90</combatPower>
+		<invNutrition>1</invNutrition>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind_Combat">
+		<defName>Slime_Berserker</defName>
+		<combatPower>100</combatPower>
+		<label>slime berserker</label>
+		<invNutrition>1</invNutrition>
+		<apparelMoney>1000~4000</apparelMoney>
+		<itemQuality>Good</itemQuality>	
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SlimeBasePawnKind_Combat">
+		<defName>Slime_Assimilator</defName>
+		<combatPower>200</combatPower>
+		<label>slime assimilator</label>
+		<invNutrition>1</invNutrition>
+		<apparelMoney>1000~4000</apparelMoney>
+		<itemQuality>Excellent</itemQuality>
+	</PawnKindDef>
+</Defs>

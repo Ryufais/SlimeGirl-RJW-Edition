@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
+		<defName>Rjw_Slime_Blue</defName>
+		<label>Slime</label>
+		<description>It's a viscous creature. It is similar in shape to humans and seems to understand simple language. The body is transparent and has no internal organs, except for the core in the middle of the body.</description>
+		<alienRace>
+			<generalSettings>
+				<reproduction>
+					<femaleFertilityAgeFactor>
+						<points>
+							<li>(0, 0)</li>
+							<li>(2, 0)</li>
+							<li>(3, 0.5)</li>
+							<li>(5, 1)</li>
+						</points>
+					</femaleFertilityAgeFactor>
+				</reproduction>
+				<maleGenderProbability>0</maleGenderProbability>
+				<immuneToAge>true</immuneToAge>
+				<canLayDown>true</canLayDown>
+				<maxDamageForSocialfight>8</maxDamageForSocialfight>
+				<humanRecipeImport>true</humanRecipeImport>
+				<immuneToXenophobia>true</immuneToXenophobia>
+				<minAgeForAdulthood>5</minAgeForAdulthood>
+				<growthAges MayRequire="Ludeon.RimWorld.Biotech">
+					<li>1</li>
+					<li>2</li>
+					<li>5</li>
+				</growthAges>
+				<growthFactorByAge MayRequire="Ludeon.RimWorld.Biotech">
+					<points>
+						<li>(0,2)</li>
+						<li>(1,1.5)</li>
+						<li>(2,1)</li>
+					</points>
+				</growthFactorByAge>
+				<alienPartGenerator>
+					<oldHairAgeRange>650~750</oldHairAgeRange>
+					<headTypes>
+						<li>SlimeFace</li>
+					</headTypes>
+					<bodyTypes>
+						<li>AA</li>
+						<li>AB</li>
+						<li>AC</li>
+						<li>AD</li>
+						<li>BA</li>
+						<li>BB</li>
+						<li>BC</li>
+						<li>BD</li>
+						<li>CA</li>
+						<li>CB</li>
+						<li>CC</li>
+						<li>CD</li>
+						<li>DA</li>
+						<li>DB</li>
+						<li>DC</li>
+						<li>DD</li>
+					</bodyTypes>
+					<!-- <aliencrowntypes>
+						<li>SlimeFace</li>
+					</aliencrowntypes>
+					<alienbodytypes>
+						<li>SlimeBody</li>
+					</alienbodytypes> -->
+					<headOffset>(0,0)</headOffset>
+					<customDrawSize>(1, 1)</customDrawSize>
+					<customHeadDrawSize>(1,1)</customHeadDrawSize>
+					<customPortraitDrawSize>1,1</customPortraitDrawSize>
+					<headBodyPartDef>SlimeHead</headBodyPartDef>
+					<colorChannels Inherit="False">
+						<li>
+							<name>skin</name>
+							<first Class="ColorGenerator_Options">
+								<options>
+									<li>
+										<weight>100</weight>
+										<only>(255,255,255)</only>
+									</li>
+								</options>
+							</first>
+						</li>
+						<li>
+							<name>hair</name>
+							<first Class="ColorGenerator_Options">
+								<options>
+									<li>
+										<weight>100</weight>
+										<only>(255,255,255)</only>
+									</li>
+								</options>
+							</first>
+							<second Class="ColorGenerator_Single">
+								<color>(255, 255, 255)</color>
+							</second>
+						</li>
+					</colorChannels>
+				</alienPartGenerator>
+				<disallowedTraits>
+					<li>
+						<defName>AnnoyingVoice</defName>
+						<chance>100</chance>
+					</li>
+					<li>
+						<defName>CreepyBreathing</defName>
+						<chance>100</chance>
+					</li>
+				</disallowedTraits>
+			</generalSettings>
+			<graphicPaths>
+				<skinColor>(1,1,1,1)</skinColor>
+				<skinShader>Cutout</skinShader>
+				<head>
+					<path>Things/Slime/Heads/</path>
+					<extendedGraphics>
+						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">
+							Things/Slime/Heads/SlimeFace_Normal</Age>
+						<Age For="SlimelikeChild">Things/Slime/Heads/SlimeFace_Normal</Age>
+						<Age For="SlimelikeTeenager">Things/Slime/Heads/SlimeFace_Normal</Age>
+						<Age For="SlimelikeAdult">Things/Slime/Heads/SlimeFace_Normal</Age>
+					</extendedGraphics>
+				</head>
+				<body>
+					<extendedGraphics>
+						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">
+							Things/Slime/Bodies/Baby/NormalSlime</Age>
+						<Age For="SlimelikeChild">
+							<path>Things/Slime/Bodies/Baby/NormalSlime</path>
+						</Age>
+						<!-- <Age For="SlimelikeTeenager">Things/Slime/Bodies/Naked_AA</Age> -->
+						<!-- <Age For="SlimelikeAdult">Things/Slime/Bodies/Naked_AA</Age> -->
+						<BodyType For="AA">Things/Slime/Bodies/Naked_AA</BodyType>
+						<BodyType For="AB">Things/Slime/Bodies/Naked_AB</BodyType>
+						<BodyType For="AC">Things/Slime/Bodies/Naked_AC</BodyType>
+						<BodyType For="AD">Things/Slime/Bodies/Naked_AD</BodyType>
+						<BodyType For="BA">Things/Slime/Bodies/Naked_BA</BodyType>
+						<BodyType For="BB">Things/Slime/Bodies/Naked_BB</BodyType>
+						<BodyType For="BC">Things/Slime/Bodies/Naked_BC</BodyType>
+						<BodyType For="BD">Things/Slime/Bodies/Naked_BD</BodyType>
+						<BodyType For="CA">Things/Slime/Bodies/Naked_CA</BodyType>
+						<BodyType For="CB">Things/Slime/Bodies/Naked_CB</BodyType>
+						<BodyType For="CC">Things/Slime/Bodies/Naked_CC</BodyType>
+						<BodyType For="CD">Things/Slime/Bodies/Naked_CD</BodyType>
+						<BodyType For="DA">Things/Slime/Bodies/Naked_DA</BodyType>
+						<BodyType For="DB">Things/Slime/Bodies/Naked_DB</BodyType>
+						<BodyType For="DC">Things/Slime/Bodies/Naked_DC</BodyType>
+						<BodyType For="DD">Things/Slime/Bodies/Naked_DD</BodyType>
+					</extendedGraphics>
+				</body>
+				<skeleton>Things/Slime_Corpse</skeleton>
+				<stump>Things/Slime_Corpse</stump>
+				<skull>Things/Slime_Corpse</skull>
+				<swaddle>Things/Slime/Bodies/Baby/Naked_SlimeBody</swaddle>
+
+				<!-- <li>
+					<body>Things/Slime/Bodies/</body>
+					<head>Things/Slime/Heads/</head>
+					<skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
+				</li>
+				<li>
+					<lifeStageDefs>
+						<li>SlimelikeBaby</li>
+					</lifeStageDefs>
+					<body>Things/Slime/Bodies/</body>
+					<head>Things/Slime/Heads/</head>
+					<skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
+					<customDrawSize>(0.5,0.5)</customDrawSize>
+					<customHeadDrawSize>(0.5,0.5)</customHeadDrawSize>
+				</li>
+				<li>
+					<lifeStageDefs>
+						<li>SlimelikeToddler</li>
+					</lifeStageDefs>
+					<body>Things/Slime/Bodies/</body>
+					<head>Things/Slime/Heads/</head>
+					<skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
+					<customDrawSize>(0.6,0.6)</customDrawSize>
+					<customHeadDrawSize>(0.6,0.6)</customHeadDrawSize>
+				</li>
+				<li>
+					<lifeStageDefs>
+						<li>SlimelikeChild</li>
+					</lifeStageDefs>
+					<body>Things/Slime/Bodies/</body>
+					<head>Things/Slime/Heads/</head>
+					<skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
+					<customDrawSize>(0.7,0.7)</customDrawSize>
+					<customHeadDrawSize>(0.7,0.7)</customHeadDrawSize>
+				</li>
+				<li>
+					<lifeStageDefs>
+						<li>SlimelikeTeenager</li>
+					</lifeStageDefs>
+					<body>Things/Slime/Bodies/</body>
+					<head>Things/Slime/Heads/</head>
+					<skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
+					<customDrawSize>(0.85,0.85)</customDrawSize>
+					<customHeadDrawSize>(0.85,0.85)</customHeadDrawSize>
+				</li> -->
+			</graphicPaths>
+			<!-- <hairSettings>
+				<hasHair>true</hasHair>
+				<getsGreyAt>750</getsGreyAt>
+				<hairTags>
+					<li>SL_Hair</li>
+				</hairTags>
+			</hairSettings> -->
+			<styleSettings>
+				<li>
+					<key>HairDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>BeardDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>TattooDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+			</styleSettings>
+			<relationSettings>
+			</relationSettings>
+			<raceRestriction>
+				<onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
+				<onlyUseRaceRestrictedWeapons>false</onlyUseRaceRestrictedWeapons>
+				<apparelList>
+				</apparelList>
+				<whiteApparelList>
+				</whiteApparelList>
+				<blackEndoCategories>
+					<li>Melanin</li>
+					<li>HairColor</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">BodyType</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Ears</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Nose</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Voice</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Headbone</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Head</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Jaw</li>
+				</blackEndoCategories>
+
+				<blackGeneList>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Furskin</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Brow_Heavy</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Hair_BaldOnly</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Beard_Always</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">FacialRidges</li>
+				</blackGeneList>
+
+				<blackGeneTags>
+					<li MayRequire="Ludeon.RimWorld.Biotech">EyeColor</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">SkinColorOverride</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Tail</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">BeardStyle</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Fur</li>
+				</blackGeneTags>
+			</raceRestriction>
+			<!-- <thoughtSettings>
+				<cannotReceiveThoughtsAtAll>true</cannotReceiveThoughtsAtAll>
+			</thoughtSettings> -->
+		</alienRace>
+		<statBases>
+			<MarketValue>5800</MarketValue>
+			<MoveSpeed>4</MoveSpeed>
+			<Wildness>0.38</Wildness>
+			<Flammability>0.0</Flammability>
+			<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+			<ComfyTemperatureMax>45</ComfyTemperatureMax>
+			<ImmunityGainSpeed>3</ImmunityGainSpeed>
+			<CarryingCapacity>35</CarryingCapacity>
+			<ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.20</ArmorRating_Heat>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<MeatAmount>0</MeatAmount>
+			<PainShockThreshold>1</PainShockThreshold>
+			<EatingSpeed>0.7</EatingSpeed>
+			<LeatherAmount>0</LeatherAmount>
+			<MeleeDodgeChance>0.75</MeleeDodgeChance>
+			<AimingDelayFactor>0.75</AimingDelayFactor>
+			<NegotiationAbility>0.80</NegotiationAbility>
+			<ConstructionSpeed>1</ConstructionSpeed>
+			<SocialImpact>1.25</SocialImpact>
+		</statBases>
+		<tools>
+			<li>
+				<label>SL acid sting</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.0</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>AcidBurn</def>
+							<amount>5</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>SL punch</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2.0</cooldownTime>
+				<linkedBodyPartsGroup>Arms</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Blunt</def>
+							<amount>6</amount>
+						</li>
+						<li>
+							<def>Stun</def>
+							<amount>5</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+		<comps>
+		</comps>
+		<race>
+			<thinkTreeMain>Humanlike</thinkTreeMain>
+			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+			<baseHungerRate>1.5</baseHungerRate>
+			<intelligence>Humanlike</intelligence>
+			<renderTree>Humanlike</renderTree>
+			<makesFootprints>false</makesFootprints>
+			<lifeExpectancy>850</lifeExpectancy>
+			<nameCategory>HumanStandard</nameCategory>
+			<bloodDef>Slime_BloodFilth</bloodDef><!-- 피 -->
+			<bloodSmearDef>Slime_BloodSmear</bloodSmearDef>
+			<!-- <trainability>Advanced</trainability> -->
+			<fleshType>Slime_Flesh</fleshType>
+			<leatherDef>Leather_Human</leatherDef>
+			<needsRest>true</needsRest>
+			<hasGenders>true</hasGenders>
+			<body>SlimeBody</body>
+			<baseBodySize>1</baseBodySize>
+			<baseHealthScale>1</baseHealthScale>
+			<manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+			<foodType>OmnivoreHuman,OmnivoreAnimal, OvivoreAnimal,CarnivoreAnimal</foodType>
+			<gestationPeriodDays>0.5</gestationPeriodDays>
+			<hasUnnaturalCorpse>true</hasUnnaturalCorpse>
+			<nameGenerator>NamerPawnSlimeFemale</nameGenerator>
+			<hediffGiverSets>
+				<li>OrganicStandard</li>
+				<li>Human</li>
+			</hediffGiverSets>
+			<litterSizeCurve>
+				<points>
+					<li>(0, 0)</li>
+					<li>(1, 0.94)</li>
+					<li>(2, 0.05)</li>
+					<li>(3, 0.01)</li>
+					<li>(4, 0)</li>
+					<li>(5, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeStageAges>
+				<!-- <li Class="AlienRace.LifeStageAgeAlien">
+					<def>SlimelikeBaby</def>
+					<minAge>0</minAge>
+					<customDrawSize>(0.5,0.5)</customDrawSize>
+					<customHeadDrawSize>(0.5,0.5)</customHeadDrawSize>
+				</li> -->
+				<li Class="AlienRace.LifeStageAgeAlien">
+					<def>HumanlikeBaby</def>
+					<minAge>0</minAge>
+					<customDrawSize>(0.5,0.5)</customDrawSize>
+					<customHeadDrawSize>(0.5,0.5)</customHeadDrawSize>
+				</li>
+				<!-- <li Class="AlienRace.LifeStageAgeAlien">
+					<def>SlimelikeToddler</def>
+					<minAge>1</minAge>
+					<customDrawSize>(0.6,0.6)</customDrawSize>
+					<customHeadDrawSize>(0.6,0.6)</customHeadDrawSize>
+				</li> -->
+				<li Class="AlienRace.LifeStageAgeAlien">
+					<def>SlimelikeChild</def>
+					<minAge>1</minAge>
+					<customDrawSize>(0.7,0.7)</customDrawSize>
+					<customHeadDrawSize>(0.7,0.7)</customHeadDrawSize>
+					<soundWounded>Pawn_Rodent_Wounded</soundWounded>
+					<soundDeath>Pawn_Rodent_Death</soundDeath>
+					<soundCall>Pawn_Rodent_Call</soundCall>
+					<soundAngry>Pawn_Rodent_Angry</soundAngry>
+				</li>
+				<li Class="AlienRace.LifeStageAgeAlien">
+					<def>SlimelikeTeenager</def>
+					<minAge>2</minAge>
+					<customDrawSize>(0.8,0.8)</customDrawSize>
+					<customHeadDrawSize>(0.8,0.8)</customHeadDrawSize>
+					<soundWounded>Pawn_Rodent_Wounded</soundWounded>
+					<soundDeath>Pawn_Rodent_Death</soundDeath>
+					<soundCall>Pawn_Rodent_Call</soundCall>
+					<soundAngry>Pawn_Rodent_Angry</soundAngry>
+				</li>
+				<li Class="AlienRace.LifeStageAgeAlien">
+					<def>SlimelikeAdult</def>
+					<minAge>5</minAge>
+					<customDrawSize>(1,1)</customDrawSize>
+					<customHeadDrawSize>(1,1)</customHeadDrawSize>
+					<soundWounded>Pawn_Rodent_Wounded</soundWounded>
+					<soundDeath>Pawn_Rodent_Death</soundDeath>
+					<soundCall>Pawn_Rodent_Call</soundCall>
+					<soundAngry>Pawn_Rodent_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+			<specialShadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			</specialShadowData>
+			<ageGenerationCurve>
+				<points>
+					<li>(14,0)</li>
+					<li>(16,50)</li>
+					<li>(20,100)</li>
+					<li>(25,20)</li>
+					<li>(26,3)</li>
+					<li>(30,0)</li>
+				</points>
+			</ageGenerationCurve>
+		</race>
+		<recipes>
+			<li>Anesthetize</li>
+		</recipes>
+		<tradeTags>
+			<li>AnimalExotic</li>
+		</tradeTags>
+	</AlienRace.ThingDef_AlienRace>
+
+	<!-- <LifeStageDef>
+		<defName>SlimelikeBaby</defName>
+		<label>baby</label>
+		<developmentalStage>Baby</developmentalStage>
+		<bodySizeFactor>0.2</bodySizeFactor>
+		<foodMaxFactor>1.5</foodMaxFactor>
+		<healthScaleFactor>0.2</healthScaleFactor>
+		<hungerRateFactor>0.2</hungerRateFactor>
+		<marketValueFactor>0.5</marketValueFactor>
+		<meleeDamageFactor>0.5</meleeDamageFactor>
+		<statFactors>
+			<MoveSpeed>0.2</MoveSpeed>
+		</statFactors>
+	</LifeStageDef> -->
+
+	<!-- <LifeStageDef ParentName="HumanlikeAdolescent">
+		<defName>SlimelikeToddler</defName>
+		<label>toddler</label>
+		<workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeChild</workerClass>
+		<developmentalStage>Child</developmentalStage>
+		<bodySizeFactor>0.32</bodySizeFactor>
+		<foodMaxFactor>1.5</foodMaxFactor>
+		<healthScaleFactor>0.4</healthScaleFactor>
+		<hungerRateFactor>0.4</hungerRateFactor>
+		<marketValueFactor>0.7</marketValueFactor>
+		<meleeDamageFactor>0.6</meleeDamageFactor>
+		<statFactors>
+			<MoveSpeed>0.3</MoveSpeed>
+		</statFactors>
+		<silhouetteGraphicData>
+			<texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</silhouetteGraphicData>
+	</LifeStageDef> -->
+
+	<LifeStageDef ParentName="HumanlikeAdolescent">
+		<defName>SlimelikeChild</defName>
+		<label>child</label>
+		<workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeChild</workerClass>
+		<developmentalStage>Child</developmentalStage>
+		<bodySizeFactor>0.5</bodySizeFactor>
+		<healthScaleFactor>0.5</healthScaleFactor>
+		<hungerRateFactor>0.6</hungerRateFactor>
+		<marketValueFactor>0.9</marketValueFactor>
+		<meleeDamageFactor>0.7</meleeDamageFactor>
+		<statFactors>
+			<MoveSpeed>0.65</MoveSpeed>
+		</statFactors>
+		<!-- <milkable>true</milkable>
+		<shearable>true</shearable> -->
+		<silhouetteGraphicData>
+			<texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</silhouetteGraphicData>
+	</LifeStageDef>
+
+	<LifeStageDef ParentName="HumanlikeAdolescent">
+		<defName>SlimelikeTeenager</defName>
+		<label>teenager</label>
+		<workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeAdult</workerClass>
+		<adjective>teenage</adjective>
+		<reproductive>true</reproductive>
+		<bodySizeFactor>0.85</bodySizeFactor>
+		<healthScaleFactor>0.90</healthScaleFactor>
+		<meleeDamageFactor>0.85</meleeDamageFactor>
+		<statFactors>
+			<MoveSpeed>0.95</MoveSpeed>
+		</statFactors>
+		<!-- <milkable>true</milkable>
+		<shearable>true</shearable> -->
+		<silhouetteGraphicData>
+			<texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</silhouetteGraphicData>
+	</LifeStageDef>
+
+	<LifeStageDef>
+		<defName>SlimelikeAdult</defName>
+		<label>adult</label>
+		<workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeAdult</workerClass>
+		<visible>false</visible>
+		<reproductive>true</reproductive>
+		<!-- <milkable>true</milkable>
+		<shearable>true</shearable> -->
+		<silhouetteGraphicData>
+			<texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanAdult</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</silhouetteGraphicData>
+	</LifeStageDef>
+
+	<ThingDef ParentName="FilthBlood" Name="SlimeBloodFilth">
+		<defName>Slime_BloodFilth</defName>
+		<label>slime puddle</label>
+		<graphicData>
+			<texPath>Things/Filth/Spatter</texPath>
+			<color>(100, 230, 255, 180)</color>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="SlimeBloodFilth">
+		<defName>Slime_BloodSmear</defName>
+		<label>slime smear</label>
+		<graphicData>
+			<texPath>Things/Filth/CrawlSmear</texPath>
+			<color>(100, 230, 255, 150)</color>
+			<graphicClass>Graphic_ClusterTight</graphicClass>
+			<drawSize>0.9</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<FleshTypeDef>
+		<defName>Slime_Flesh</defName>
+		<corpseCategory>CorpsesSlime</corpseCategory>
+		<damageEffecter>Slime_Damage_Hit</damageEffecter>
+		<isOrganic>true</isOrganic>
+		<genericWounds>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundA</texture>
+				<color>100, 230, 255</color>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundB</texture>
+				<color>100, 230, 255</color>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundC</texture>
+				<color>100, 230, 255</color>
+			</li>
+		</genericWounds>
+		<bandagedWounds>
+			<li>
+				<texture>Things/Pawn/Wounds/BandagedA</texture>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/BandagedB</texture>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/BandagedC</texture>
+			</li>
+		</bandagedWounds>
+		<!-- <hediffWounds>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <hediff>Scarification</hediff>
+        <wounds>
+          <li>
+            <texture>Things/Pawn/Wounds/ScarificationA</texture>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <texture>Things/Pawn/Wounds/ScarificationB</texture>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <texture>Things/Pawn/Wounds/ScarificationC</texture>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+        </wounds>
+      </li>
+      <li>
+        <hediff>MissingBodyPart</hediff>
+        <wounds>
+          <li>
+            <textureSouth>Things/Pawn/Wounds/MissingEye_Scar_south</textureSouth>
+            <textureNorth>Things/Pawn/Wounds/MissingEye_Scar_south</textureNorth>
+            <textureEast>Things/Pawn/Wounds/MissingEye_Scar_east</textureEast>
+            <textureWest>Things/Pawn/Wounds/MissingEye_Scar_east</textureWest>
+            <flipWest>true</flipWest>
+            <onlyOnPart>Eye</onlyOnPart>
+            <flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+            <flipOnRotation>South</flipOnRotation>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <missingBodyPartFresh>false</missingBodyPartFresh>
+            <scale>0.7</scale>
+            <drawOffsetSouth>(0, -0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(0, -0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <textureSouth>Things/Pawn/Wounds/MissingEye_Fresh</textureSouth>
+            <textureNorth>Things/Pawn/Wounds/MissingEye_Fresh</textureNorth>
+            <textureEast>Things/Pawn/Wounds/MissingEye_Fresh</textureEast>
+            <textureWest>Things/Pawn/Wounds/MissingEye_Fresh</textureWest>
+            <flipWest>true</flipWest>
+            <onlyOnPart>Eye</onlyOnPart>
+            <flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+            <flipOnRotation>South</flipOnRotation>
+            <missingBodyPartFresh>true</missingBodyPartFresh>
+            <scale>0.7</scale>
+            <drawOffsetSouth>(0, -0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(0, -0.001, -0.24)</drawOffsetEastWest>
+          </li>
+        </wounds>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">
+        <hediff>PorcupineQuill</hediff>
+        <wounds>
+          <li>
+            <texture>Things/Pawn/Wounds/PorcupineQuillA</texture>
+            <tintWithSkinColor>false</tintWithSkinColor>
+            <displayOverApparel>true</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <texture>Things/Pawn/Wounds/PorcupineQuillB</texture>
+            <tintWithSkinColor>false</tintWithSkinColor>
+            <displayOverApparel>true</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <texture>Things/Pawn/Wounds/PorcupineQuillC</texture>
+            <tintWithSkinColor>false</tintWithSkinColor>
+            <displayOverApparel>true</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+          <li>
+            <texture>Things/Pawn/Wounds/PorcupineQuillD</texture>
+            <tintWithSkinColor>false</tintWithSkinColor>
+            <displayOverApparel>true</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+            <drawOffsetSouth>(0, 0.001, -0.24)</drawOffsetSouth>
+            <drawOffsetEastWest>(-0.03, 0.001, -0.24)</drawOffsetEastWest>
+          </li>
+        </wounds>
+      </li>
+    </hediffWounds> -->
+	</FleshTypeDef>
+
+	<EffecterDef>
+		<defName>Slime_Damage_Hit</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.4</positionRadius>
+				<fleckDef>AirPuff</fleckDef>
+				<burstCount>4~5</burstCount>
+				<speed>0.4~0.8</speed>
+				<scale>1.0~1.1</scale>
+				<color>(180, 240, 255)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.1</positionRadius>
+				<fleckDef>BloodSplash</fleckDef>
+				<burstCount>2~3</burstCount>
+				<scale>1.1~1.4</scale>
+				<color>(100, 230, 255)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.0</positionRadius>
+				<fleckDef>BodyImpact</fleckDef>
+				<burstCount>1</burstCount>
+				<scale>0.4</scale>
+				<color>(138, 255, 251, 80)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+		<offsetTowardsTarget>0.25~0.25</offsetTowardsTarget>
+		<positionRadius>0.1</positionRadius>
+	</EffecterDef>
+
+	<ThingCategoryDef>
+		<defName>CorpsesSlime</defName>
+		<label>slime corpses</label>
+		<parent>Corpses</parent>
+	</ThingCategoryDef>
+</Defs>

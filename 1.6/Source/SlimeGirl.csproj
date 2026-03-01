@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>SlimeGirl</AssemblyName>
+    <TargetFramework>net472</TargetFramework>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <OutputType>Library</OutputType>
+    <NoStdLib>false</NoStdLib>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>false</Deterministic>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\Assemblies\</OutputPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Reference><Private>False</Private></Reference>
+    <ProjectReference><Private>False</Private></ProjectReference>
+    <PackageReference><ExcludeAssets>runtime</ExcludeAssets></PackageReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="RJW">
+      <HintPath>.\References\RJW.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4633" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp" IncludeVirtualMembers="false" />
+    <Publicize Include="RJW" IncludeVirtualMembers="false" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<rjw.RaceGroupDef>
+		<defName>Rjw_Slime</defName>
+		<raceNames>
+			<li>Rjw_Slime_Blue</li>
+		</raceNames>	
+		<anuses>
+			<li>SlimeAnus</li>
+		</anuses>
+
+		<femaleBreasts>
+			<li>SlimeBreasts</li>
+		</femaleBreasts>
+		
+		<femaleGenitals>
+			<li>SlimeVagina</li>
+		</femaleGenitals>
+
+		<maleBreasts>
+			<li>SlimeBreasts</li>
+		</maleBreasts>
+
+		<maleGenitals>
+			<li>SlimeTentacles</li>
+		</maleGenitals>
+		
+		<tags>
+			<li>Slime</li>
+		</tags>
+		<hasSingleGender>false</hasSingleGender>
+		<hasSexNeed>true</hasSexNeed>
+		<hasFertility>true</hasFertility>
+		<hasPregnancy>true</hasPregnancy>
+	</rjw.RaceGroupDef>
+
+</Defs>

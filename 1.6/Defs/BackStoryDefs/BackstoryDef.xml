@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<AlienRace.AlienBackstoryDef Name="BaseSlimeBackStory" Abstract="True">
+		<forcedTraitsChance>
+			<li>
+				<defName Degree="2">NaturalMood</defName>
+				<chance>100</chance>
+			</li>
+		</forcedTraitsChance>
+		<forcedHediffs>
+			<li>Slime_AutoRecovery</li>
+			<li>Hediff_Slime</li>
+		</forcedHediffs>
+		<disallowedTraits>
+			<Beauty>-1</Beauty>
+			<Beauty>-2</Beauty>
+			<DrugDesire>2</DrugDesire>
+			<DrugDesire>1</DrugDesire>
+			<DrugDesire>-1</DrugDesire>
+			<Bloodlust>0</Bloodlust>
+			<Abrasive>0</Abrasive>
+			<Pyromaniac>0</Pyromaniac>
+			<DislikesMen>0</DislikesMen>
+			<DislikesWomen>0</DislikesWomen>
+		</disallowedTraits>
+		<maleCommonality>0</maleCommonality>
+		<femaleCommonality>100</femaleCommonality>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_C0</defName>
+		<title>Slime Child</title>
+		<titleShort>Child</titleShort>
+		<description>[PAWN_nameDef] is a slime.</description>
+		<slot>Childhood</slot>
+		<skillGains>
+			<Shooting>-8</Shooting>
+			<Melee>4</Melee>
+			<Mining>-1</Mining>
+			<Plants>-1</Plants>
+			<Construction>-4</Construction>
+			<Animals>3</Animals>
+		</skillGains>
+		<spawnCategories>
+			<li>SlimeStory</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_C1</defName>
+		<title>Slime Genius</title>
+		<titleShort>Genius</titleShort>
+		<description>[PAWN_nameDef] is an exceptionally intelligent slime.</description>
+		<slot>Childhood</slot>
+		<skillGains>
+			<Shooting>-8</Shooting>
+			<Mining>-1</Mining>
+			<Plants>2</Plants>
+			<Construction>-8</Construction>
+			<Animals>3</Animals>
+			<Intellectual>8</Intellectual>
+			<Social>4</Social>
+		</skillGains>
+		<spawnCategories>
+			<li>SlimeStory</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_C2</defName>
+		<title>Curious Slime</title>
+		<titleShort>Curious</titleShort>
+		<description>[PAWN_nameDef] is a curious slime that loves to explore and learn new things.</description>
+		<slot>Childhood</slot>
+		<skillGains>
+			<Shooting>-6</Shooting>
+			<Melee>2</Melee>
+			<Mining>2</Mining>
+			<Plants>2</Plants>
+			<Construction>-4</Construction>
+			<Animals>2</Animals>
+			<Intellectual>2</Intellectual>
+			<Social>2</Social>
+		</skillGains>
+		<spawnCategories>
+			<li>SlimeStory</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_C3</defName>
+		<title>Wild Slime</title>
+		<titleShort>Wild</titleShort>
+		<description>[PAWN_nameDef] is a slime born in the wilderness.</description>
+		<slot>Childhood</slot>
+		<skillGains>
+			<Shooting>-8</Shooting>
+			<Melee>6</Melee>
+			<Mining>-1</Mining>
+			<Plants>-1</Plants>
+			<Construction>-4</Construction>
+			<Animals>3</Animals>
+			<Social>3</Social>
+		</skillGains>
+		<workDisables>
+			<li>Caring</li>
+			<li>Intellectual</li>
+			<li>Artistic</li>
+			<li>Cooking</li>
+			<li>Crafting</li>
+		</workDisables>
+		<spawnCategories>
+			<li>SlimeStory</li>
+			<li>SlimeWild</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_A0</defName>
+		<title>Slime Adult</title>
+		<titleShort>Adult</titleShort>
+		<description>[PAWN_nameDef] is a slime that has fully matured.</description>
+		<slot>Adulthood</slot>
+		<skillGains>
+			<Melee>4</Melee>
+			<Social>3</Social>
+			<Animals>3</Animals>
+		</skillGains>
+		<spawnCategories>
+			<li>SlimeStory</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_A1</defName>
+		<title>Savage Slime</title>
+		<titleShort>Savage</titleShort>
+		<description>[PAWN_nameDef] is a slime that has fully embraced its wild nature.</description>
+		<slot>Adulthood</slot>
+		<skillGains>
+			<Melee>8</Melee>
+			<Animals>6</Animals>
+		</skillGains>
+		<workDisables>
+			<li>Caring</li>
+			<li>Intellectual</li>
+			<li>Artistic</li>
+			<li>Cooking</li>
+			<li>Crafting</li>
+		</workDisables>
+		<spawnCategories>
+			<li>SlimeStory</li>
+			<li>SlimeWild</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_A2</defName>
+		<title>Slime Researcher</title>
+		<titleShort>Researcher</titleShort>
+		<description>[PAWN_nameDef] is a slime that manages to integrate with society and pursue scientific research.</description>
+		<slot>Adulthood</slot>
+		<skillGains>
+			<Intellectual>8</Intellectual>
+			<Social>3</Social>
+			<Crafting>4</Crafting>
+		</skillGains>
+		<workDisables>
+			<li>Violent</li>
+			<li>ManualDumb</li>
+		</workDisables>
+		<spawnCategories>
+			<li>SlimeStory</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseSlimeBackStory">
+		<defName>Slime_BS_A3</defName>
+		<title>Slime Prostitute</title>
+		<titleShort>Prostitute</titleShort>
+		<description>[PAWN_nameDef] is a slime possessing total understanding of the human body, utilizing this knowledge to its advantage.</description>
+		<slot>Adulthood</slot>
+		<skillGains>
+			<Shooting>-4</Shooting>
+			<Social>6</Social>
+			<Melee>4</Melee>
+			<Animals>2</Animals>
+			<Sex MayRequire="rjw.sexperience">8</Sex>
+		</skillGains>
+		<workDisables>
+			<li>ManualSkilled</li>
+			<li>Intellectual</li>
+		</workDisables>
+		<spawnCategories>
+			<li>SlimeStory</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+</Defs>

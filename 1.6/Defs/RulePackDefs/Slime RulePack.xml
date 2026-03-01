@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <RulePackDef>
+        <defName>Slime_NamerUtility</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>Prefix->Lumi</li>
+                <li>Prefix->Vela</li>
+                <li>Prefix->Sila</li>
+                <li>Prefix->Mina</li>
+                <li>Prefix->Ooz</li>
+                <li>Prefix->Gelia</li>
+                <li>Prefix->Vara</li>
+                <li>Prefix->Lyra</li>
+                <li>Prefix->Sola</li>
+
+                <li>Suffix->via</li>
+                <li>Suffix->is</li>
+                <li>Suffix->belle</li>
+                <li>Suffix->ra</li>
+                <li>Suffix->mira</li>
+                <li>Suffix->nne</li>
+                <li>Suffix->sia</li>
+                <li>Suffix->th</li>
+
+                <li>Designation->Alpha</li>
+                <li>Designation->IX</li>
+                <li>Designation->Seven</li>
+                <li>Designation->Venus</li>
+                <li>Designation->Prime</li>
+                <li>Designation->Zero</li>
+
+                <li>SoftWord->Visca</li>
+                <li>SoftWord->Melisma</li>
+                <li>SoftWord->Aura</li>
+                <li>SoftWord->Sliss</li>
+                <li>SoftWord->Gliss</li>
+                <li>SoftWord->Vitreous</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>Slime_LastNameUtility</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>ProjectType->Azure</li>
+                <li>ProjectType->Cyan</li>
+                <li>ProjectType->Nebula</li>
+                <li>ProjectType->Void</li>
+                <li>ProjectType->Deep</li>
+                <li>ProjectType->Ion</li>
+                <li>ProjectType->Pulse</li>
+                <li>ProjectType->Ghost</li>
+
+                <li>ProjectUnit->Protocol</li>
+                <li>ProjectUnit->Strain</li>
+                <li>ProjectUnit->Subject</li>
+                <li>ProjectUnit->Nucleus</li>
+                <li>ProjectUnit->Synthesis</li>
+                <li>ProjectUnit->Entity</li>
+                <li>ProjectUnit->Array</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>NamerPawnSlimeFemale</defName>
+        <include>
+            <li>Slime_NamerUtility</li>
+            <li>Slime_LastNameUtility</li>
+        </include>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name(p=3)->[FirstPart] [LastPart]</li>
+                <li>r_name(p=1)->[FirstPart]</li>
+                
+                <li>FirstPart->[Prefix][Suffix]</li>
+                <li>FirstPart->[SoftWord]</li>
+
+                <li>LastPart->[ProjectType] [ProjectUnit]</li>
+                <li>LastPart->[ProjectUnit] [Designation]</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- <RulePackDef>
+        <defName>NamerPawnSlimeFemale</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->[Prefix][Suffix]</li>
+                <li>r_name->[SoftWord]</li>
+                <li>r_name->[Prefix]-[Number]</li>
+
+                <li>Prefix->Lumi</li>
+                <li>Prefix->Vela</li>
+                <li>Prefix->Sila</li>
+                <li>Prefix->Mina</li>
+                <li>Prefix->Ooz</li>
+                <li>Prefix->Gelia</li>
+                <li>Prefix->Vara</li>
+                <li>Prefix->Lyra</li>
+                <li>Prefix->Sola</li>
+
+                <li>Suffix->via</li>
+                <li>Suffix->is</li>
+                <li>Suffix->belle</li>
+                <li>Suffix->ra</li>
+                <li>Suffix->mira</li>
+                <li>Suffix->nne</li>
+                <li>Suffix->sia</li>
+                <li>Suffix->th</li>
+
+                <li>SoftWord->Visca</li>
+                <li>SoftWord->Melisma</li>
+                <li>SoftWord->Aura</li>
+                <li>SoftWord->Sliss</li>
+                <li>SoftWord->Gliss</li>
+                <li>SoftWord->Vitreous</li>
+
+                <li>Number->Alpha</li>
+                <li>Number->IX</li>
+                <li>Number->Seven</li>
+                <li>Number->Venus</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef> -->
+
+    <RulePackDef>
+        <defName>NamerInitialSettlementSlimePlayer</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Adjective] [Noun]</li>
+                <li>name->The [Noun]</li>
+                <li>name->[Noun] [Number]</li>
+
+                <li>Adjective->Eternal</li>
+                <li>Adjective->Primal</li>
+                <li>Adjective->Sacred</li>
+                <li>Adjective->Infinite</li>
+                <li>Adjective->First</li>
+
+                <li>Noun->Nucleus</li>
+                <li>Noun->Nexus</li>
+                <li>Noun->Cradle</li>
+                <li>Noun->Wellspring</li>
+                <li>Noun->Sanctum</li>
+                <li>Noun->Nexus</li>
+                <li>Noun->Monolith</li>
+                <li>Noun->Core</li>
+
+                <li>Number->Alpha</li>
+                <li>Number->Prime</li>
+                <li>Number->One</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>NamerFactionSlime</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->The [Adjective] [Noun]</li>
+                <li>name->[Noun] [GroupType]</li>
+
+                <li>Adjective->Viscous</li>
+                <li>Adjective->Glooping</li>
+                <li>Adjective->Gelatinous</li>
+                <li>Adjective->Translucent</li>
+
+                <li>Noun->Slime</li>
+                <li>Noun->Ooze</li>
+                <li>Noun->Puddle</li>
+                <li>Noun->Jelly</li>
+
+                <li>GroupType->Collective</li>
+                <li>GroupType->Union</li>
+                <li>GroupType->Swarm</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>NamerSettlementSlime</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Adjective] [Noun]</li>
+                <li>name->[Syllable][Suffix]</li>
+
+                <li>Adjective->Viscous</li>
+                <li>Adjective->Gooey</li>
+                <li>Adjective->Bubbling</li>
+                <li>Adjective->Dripping</li>
+                <li>Adjective->Gelatinous</li>
+                <li>Adjective->Translucent</li>
+
+                <li>Noun->Basin</li>
+                <li>Noun->Pit</li>
+                <li>Noun->Reservoir</li>
+                <li>Noun->Grotto</li>
+                <li>Noun->Incubator</li>
+                <li>Noun->Mire</li>
+
+                <li>Syllable->Glo</li>
+                <li>Syllable->Plu</li>
+                <li>Syllable->Ooz</li>
+                <li>Syllable->Miz</li>
+                <li>Syllable->Vask</li>
+
+                <li>Suffix->puddle</li>
+                <li>Suffix->oze</li>
+                <li>Suffix->slush</li>
+                <li>Suffix->blob</li>
+                <li>Suffix->mire</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>

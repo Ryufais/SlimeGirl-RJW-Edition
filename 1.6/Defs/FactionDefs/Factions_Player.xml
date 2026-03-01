@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<FactionDef ParentName="FactionBase" Name="Slime_FactionBase" Abstract="True" >
+		<colorSpectrum>
+		  <li>(1, 1, 1)</li>
+		</colorSpectrum>
+		<melaninRange>0</melaninRange>
+		<!-- <xenotypeSet>
+			<xenotypeChances>
+				<Baseliner MayRequire="Ludeon.RimWorld.Biotech">1</Baseliner>
+
+				<Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0</Dirtmole>
+				<Genie MayRequire="Ludeon.RimWorld.Biotech">0</Genie>
+				<Hussar MayRequire="Ludeon.RimWorld.Biotech">0</Hussar>
+				<Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0</Sanguophage>
+				<Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0</Neanderthal>
+				<Pigskin MayRequire="Ludeon.RimWorld.Biotech">0</Pigskin>
+				<Impid MayRequire="Ludeon.RimWorld.Biotech">0</Impid>
+				<Waster MayRequire="Ludeon.RimWorld.Biotech">0</Waster>
+				<Yttakin MayRequire="Ludeon.RimWorld.Biotech">0</Yttakin>
+				<Highmate MayRequire="Ludeon.RimWorld.Biotech">0</Highmate>
+			</xenotypeChances>
+		</xenotypeSet> -->
+	</FactionDef>
+
+	<FactionDef ParentName="Slime_FactionBase">
+		<defName>Slime_PlayerFaction</defName>
+		<label>Slime Colony</label>
+		<description>Your slime colony.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>Slime_Colonist</basicMemberKind>
+		<pawnSingular>Colonist</pawnSingular>
+		<pawnsPlural>Colonists</pawnsPlural>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementSlimePlayer</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionSlime</factionNameMaker>
+		<settlementNameMaker>NamerSettlementSlime</settlementNameMaker>
+		<factionIconPath>Things/Icon/Slime_Icon</factionIconPath>
+		<settlementTexturePath>Things/Icon/Slime_Icon</settlementTexturePath>
+		<techLevel>Medieval</techLevel>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>Offworld</li>
+				</categories>
+				<commonality>1</commonality>
+			</li>
+		</backstoryFilters>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<startingTechprintsResearchTags>
+			<li>ClassicStart</li>
+			<li>ClassicStartTechprints</li>
+		</startingTechprintsResearchTags>
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Synthread</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+
+	<FactionDef ParentName="Slime_FactionBase">
+		<defName>SpaceSubjects</defName>
+		<label>space subjects</label>
+		<description>A colony of viscous creatures that are able to mimic humans.</description>
+		<pawnSingular>subject</pawnSingular>
+		<pawnsPlural>subjects</pawnsPlural>
+		<leaderTitle>Prime Nucleus</leaderTitle>
+		<basicMemberKind>Slime</basicMemberKind>
+		<factionNameMaker>NamerFactionSlime</factionNameMaker>
+		<settlementNameMaker>NamerSettlementSlime</settlementNameMaker>
+		<allowedCultures>
+			<li>Blue_Slime_Cultures</li>
+		</allowedCultures>
+		<settlementGenerationWeight>1</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>false</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+		<factionIconPath>Things/Icon/Slime_Icon</factionIconPath>
+		<settlementTexturePath>Things/Icon/Slime_Icon</settlementTexturePath>
+		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+		<fixedName>Subjects</fixedName>
+		<techLevel>Spacer</techLevel>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>Offworld</li>
+				</categories>
+				<commonality>1</commonality>
+			</li>
+		</backstoryFilters>
+		<caravanTraderKinds>
+			<li>Caravan_Outlander_Exotic</li>
+			<li>Caravan_Outlander_BulkGoods</li>
+		</caravanTraderKinds>
+		<visitorTraderKinds>
+			<li>Visitor_Outlander_Standard</li>
+		</visitorTraderKinds>
+		<baseTraderKinds>
+			<li>Base_Outlander_Standard</li>
+		</baseTraderKinds>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0,35)</li>
+				<li>(70, 50)</li>
+				<li>(700, 100)</li>
+				<li>(1300, 150)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>100</commonality>
+				<maxTotalPoints>1000</maxTotalPoints>
+				<options>
+					<Slime_Enforcer>20</Slime_Enforcer>
+				</options>
+			</li>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>50</commonality>
+				<options>
+					<Slime_Enforcer>20</Slime_Enforcer>
+					<Slime_Executioner>10</Slime_Executioner>
+					<Slime_Berserker>5</Slime_Berserker>
+					<Slime_Assimilator>1</Slime_Assimilator>
+				</options>
+			</li>
+			<li>
+				<kindDef>Combat</kindDef>
+				<disallowedStrategies>
+					<li>Siege</li>
+				</disallowedStrategies>
+				<commonality>30</commonality>
+				<options>
+					<Slime_Enforcer>30</Slime_Enforcer>
+					<Slime_Executioner>20</Slime_Executioner>
+					<Slime_Berserker>20</Slime_Berserker>
+					<Slime_Assimilator>5</Slime_Assimilator>
+					<Slime_Nucleus>1</Slime_Nucleus>
+				</options>
+			</li>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>0</commonality>
+				<disallowedStrategies>
+					<li>Siege</li>
+				</disallowedStrategies>
+				<options>
+					<Slime_Nucleus>1</Slime_Nucleus>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<Slime_Entrepreneur>5</Slime_Entrepreneur>
+					<Slime>20</Slime>
+					<Slime_Enforcer>5</Slime_Enforcer>
+					<Slime_Executioner>5</Slime_Executioner>
+					<Slime_Berserker>5</Slime_Berserker>
+					<Slime_Assimilator>1</Slime_Assimilator>
+				</options>
+			</li>
+			<li>
+				<kindDef>Trader</kindDef>
+				<traders>
+					<Slime_Merchant>15</Slime_Merchant>
+					<Slime_Entrepreneur>8</Slime_Entrepreneur>
+				</traders>
+				<carriers>
+					<Muffalo>6</Muffalo>
+				</carriers>
+				<guards>
+					<Slime_Enforcer>50</Slime_Enforcer>
+					<Slime_Berserker>15</Slime_Berserker>
+					<Slime_Executioner>10</Slime_Executioner>
+					<Slime_Assimilator>5</Slime_Assimilator>
+				</guards>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<Slime>15</Slime>
+					<Slime_Entrepreneur>8</Slime_Entrepreneur>
+					<Slime_Enforcer>20</Slime_Enforcer>
+					<Slime_Executioner>10</Slime_Executioner>
+					<Slime_Berserker>5</Slime_Berserker>
+					<Slime_Assimilator>1</Slime_Assimilator>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<apparelStuffFilter>
+			<stuffCategoriesToAllow>
+				<li>Fabric</li>
+				<li>Leathery</li>
+				<li>Woody</li>
+				<li>Metallic</li>
+			</stuffCategoriesToAllow>
+		</apparelStuffFilter>
+		<allowedArrivalTemperatureRange>-40~55</allowedArrivalTemperatureRange>
+		<rescueesCanJoin>true</rescueesCanJoin>
+	</FactionDef>
+</Defs>

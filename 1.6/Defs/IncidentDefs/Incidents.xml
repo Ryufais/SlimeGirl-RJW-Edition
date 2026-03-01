@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<IncidentDef>
+		<defName>SlimeRefugeePodCrash</defName>
+		<label>transport pod crash</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>SlimeGirl.IncidentWorker_SlimeTransportPodCrash</workerClass>
+		<baseChance>1</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+	</IncidentDef>
+
+	<IncidentDef>
+		<defName>SlimeWandersIn</defName>
+		<label>wild slime wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>SlimeGirl.IncidentWorker_SlimeWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<letterLabel>Wild slime</letterLabel>
+		<letterText>A Slime living among wild animals has wandered into the area. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+</Defs>

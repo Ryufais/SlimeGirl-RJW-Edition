@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Bases -->
+
+  <HeadTypeDef ParentName="AverageBase" Name="Slime_HeadtypeBase" Abstract="True">
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="Slime_HeadtypeBase" Name="Slime_MaleHeadtypeBase" Abstract="True">
+	<gender>Male</gender>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="Slime_HeadtypeBase" Name="Slime_FemaleHeadtypeBase" Abstract="True">
+	<gender>Female</gender>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeFace</defName>
+    <graphicPath>Things/Slime/Heads/SlimeFace_Normal</graphicPath>
+  </HeadTypeDef>
+  
+</Defs>

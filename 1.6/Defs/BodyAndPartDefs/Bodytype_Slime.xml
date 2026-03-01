@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <BodyTypeDef>
+        <defName>AA</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_AA</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>AB</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_AB</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>AC</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_AC</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>AD</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_AD</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>BA</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_BA</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>BB</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_BB</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>BC</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_BC</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>BD</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_BD</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>CA</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_CA</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>CB</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_CB</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>CC</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_CC</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>CD</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_CD</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>DA</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_DA</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>DB</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_DB</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+
+    <BodyTypeDef>
+        <defName>DC</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_DC</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+    
+    <BodyTypeDef>
+        <defName>DD</defName>
+        <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_DD</bodyNakedGraphicPath>
+        <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
+    </BodyTypeDef>
+</Defs>
