@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationInsert">
+    <!-- <Operation Class="PatchOperationInsert">
         <xpath>/Defs/ThinkTreeDef[defName="Humanlike"]//li[@Class="ThinkNode_ConditionalPawnKind"
             and pawnKind="WildMan" and descendant::tagToGive[text()="Idle"]]</xpath>
         <order>Append</order>
@@ -36,6 +37,5 @@
                 </subNodes>
             </li>
         </value>
-    </Operation>
-
+    </Operation> -->
 </Patch>
