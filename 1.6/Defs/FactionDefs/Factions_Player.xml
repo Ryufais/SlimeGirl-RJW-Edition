@@ -80,7 +80,6 @@
 		<factionIconPath>Things/Icon/Slime_Icon</factionIconPath>
 		<settlementTexturePath>Things/Icon/Slime_Icon</settlementTexturePath>
 		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-		<fixedName>Subjects</fixedName>
 		<techLevel>Spacer</techLevel>
 		<backstoryFilters>
 			<li>
