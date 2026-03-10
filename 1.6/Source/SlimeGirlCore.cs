@@ -325,7 +325,7 @@ namespace SlimeGirl
         }
         
     }
-    public class Hediff_Slime : Hediff
+    public class Hediff_Slime : HediffWithComps
     {
         public int bellyLevel;
         //public Hediff bukake;

@@ -29,8 +29,42 @@ namespace SlimeGirl
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            reviveTime = GenTicks.SecondsToTicks(1000);
-            innerTime = reviveTime;
+
+            int baseReviveTicks = GenTicks.SecondsToTicks(1000);
+            Pawn slime = InnerPawn;
+            innerTime = baseReviveTicks;
+            if (slime != null)
+            {
+
+                if (slime.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.Hediff_Slime) is Hediff_Slime hediffWithComps)
+                {
+                    var comp = hediffWithComps.TryGetComp<HediffComp_DeathCounter>();
+
+                    if (comp != null)
+                    {
+                        comp.deaths++;
+
+                        int deathMultiplier = Mathf.Min(comp.deaths, 10);
+                        reviveTime = baseReviveTicks * deathMultiplier;
+                    }
+                    else
+                    {
+                        comp = new HediffComp_DeathCounter
+                        {
+                            parent = hediffWithComps
+                        };
+                        hediffWithComps.comps.Add(comp);
+
+                        comp.deaths = 1;
+                        reviveTime = baseReviveTicks;
+                    }
+
+                    innerTime = reviveTime;
+                }
+
+            }
+
+
             IncidentWorker_SlimeTransportPodCrash.livingSlime = null;
             IncidentWorker_SlimeTransportPodCrash.SlimeCorpse = this;
         }
@@ -54,8 +88,7 @@ namespace SlimeGirl
             }
             else
             {
-                Resurrect();
-                innerTime = reviveTime;
+                Resurrect();            
             }
 
         }

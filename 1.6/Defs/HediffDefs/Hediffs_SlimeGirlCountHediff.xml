@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<HediffDef Class="SlimeGirl.Hediff_SlimeDef">
 		<defName>Hediff_Slime</defName>
@@ -34,6 +34,9 @@
 				<minSeverity>0.75</minSeverity>
 			</li>
 		</stages>
+		<comps>
+			<li Class="SlimeGirl.HediffCompProperties_DeathCounter" />
+		</comps>
 	</HediffDef>
 
 	<HediffDef>
@@ -61,5 +64,3 @@
 		</stages>
 	</HediffDef>
 </Defs>
-
-
