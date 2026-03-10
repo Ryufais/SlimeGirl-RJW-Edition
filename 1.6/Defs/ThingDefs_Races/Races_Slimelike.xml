@@ -263,9 +263,18 @@
 					<li MayRequire="Ludeon.RimWorld.Biotech">Fur</li>
 				</blackGeneTags>
 			</raceRestriction>
-			<!-- <thoughtSettings>
-				<cannotReceiveThoughtsAtAll>true</cannotReceiveThoughtsAtAll>
-			</thoughtSettings> -->
+			<thoughtSettings>
+				<cannotReceiveThoughts>
+					<li>Naked</li>
+					<li>AteWithoutTable</li>
+					<li>SleptOutside</li>
+					<li>SleptOnGround</li>
+					<li MayRequire="vegapnk.cumpilation">Cumpilation_ConsumedCum</li>
+					<li MayRequire="vegapnk.cumpilation">Cumpilation_ConsumedInsectSpunk</li>
+					<li MayRequire="vegapnk.cumpilation">Cumpilation_GotOverCumflated</li>
+					<li MayRequire="vegapnk.cumpilation">Cumpilation_CumstuffedNegative</li>
+				</cannotReceiveThoughts>
+			</thoughtSettings>
 		</alienRace>
 		<statBases>
 			<MarketValue>5800</MarketValue>
