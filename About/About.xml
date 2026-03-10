@@ -9,7 +9,7 @@
 		<li>1.6</li>
 	</supportedVersions>
 	<packageId>Rebeka.SL</packageId>
-	<modVersion IgnoreIfNoMatchingField="True">2.0.2</modVersion>
+	<modVersion IgnoreIfNoMatchingField="True">2.0.3</modVersion>
 	<description>Slime girl race for RJW</description>
 	<modDependencies>
 		<li>
