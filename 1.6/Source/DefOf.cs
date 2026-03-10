@@ -8,6 +8,13 @@ namespace SlimeGirl
     {
         public static NeedDef Outdoors;
     }
+
+    [DefOf]
+    public static class SlimeThoughtDefOf
+    {
+        public static ThoughtDef SlimeAteCum;
+    }
+
     [DefOf]
     public static class SlimeBodyPartDefOf
     {

@@ -2,6 +2,7 @@
 using RimWorld;
 using RimWorld.Planet;
 using rjw;
+using rjw.Modules.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace SlimeGirl
         static SlimeGirlRJWPatch()
         {
             Harmony harmonyInstance = new("com.SlimeGirl.rimworld.mod");
-            harmonyInstance.Patch(AccessTools.Method(typeof(SexUtility), nameof(SexUtility.ProcessSex)), null, new HarmonyMethod(patchType, nameof(ProcessSexPostFix)), null);
+            harmonyInstance.Patch(AccessTools.Method(typeof(SexUtility), nameof(SexUtility.TransferFluids)), null, new HarmonyMethod(patchType, nameof(TransferFluidsPostfix)), null);
             //harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), nameof(Pawn.MakeCorpse),
             //[typeof(Building_Grave), typeof(bool), typeof(float)]),
             // new HarmonyMethod(patchType, nameof(MakeCorpsePrefix)), null, null);
@@ -55,31 +56,22 @@ namespace SlimeGirl
             SlimeBodyLookup[32] = SlimeBodyTypeDefOf.DC;
             SlimeBodyLookup[33] = SlimeBodyTypeDefOf.DD;
         }
-        public static void ProcessSexPostFix(SexProps props)
+        public static void TransferFluidsPostfix(SexProps props)
         {
             Pawn pawn = props?.pawn;
             Pawn partner = props?.partner;
+            bool isReceiver = props.isReceiver;
+            bool isReverse = props.isRevese;
+            if (pawn == null || partner == null) return;
 
-            if (partner != null && partner.def == SlimeRaceDefOf.Rjw_Slime_Blue)
+            if (!isReverse && !isReceiver)
             {
-                if (partner.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.Hediff_Slime) is Hediff_Slime hediff_Slime)
-                {
-                    hediff_Slime.Severity += Mathf.Clamp((pawn.BodySize / 3f), 0, 1);//00~30
-                    hediff_Slime.count = 0;
-                    hediff_Slime.severityIsZero = false;
-                    SlimeCore.ChangeBodyType(partner, hediff_Slime.GetCurrentBodyType());
-                }
+                SlimeCore.ApplyCumToSlime(partner, pawn, props);
             }
-
-            if (pawn != null && pawn.def == SlimeRaceDefOf.Rjw_Slime_Blue)
+            else
+            if (isReverse && !isReceiver)
             {
-                if (pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.Hediff_Slime) is Hediff_Slime hediff_Slime)
-                {
-                    hediff_Slime.Severity += Mathf.Clamp((partner.BodySize / 2.2f), 0, 1);//00~30
-                    hediff_Slime.count = 0;
-                    hediff_Slime.severityIsZero = false;
-                    SlimeCore.ChangeBodyType(pawn, hediff_Slime.GetCurrentBodyType());
-                }
+                SlimeCore.ApplyCumToSlime(pawn, partner, props);
             }
         }
 
@@ -338,7 +330,7 @@ namespace SlimeGirl
         public int bellyLevel;
         //public Hediff bukake;
 
-        public bool severityIsZero;
+        public bool severityIsZero = true;
 
         public int maxCount;
         public float tickPerHunger;
@@ -381,15 +373,17 @@ namespace SlimeGirl
             {
                 count += delta;
 
+                var needs = pawn?.needs;
+
                 if (count >= maxCount)
                 {
                     count -= maxCount;
 
                     if (severityInt > 0)
                     {
-                        if(CurStageIndex > 0)
+                        if(CurStageIndex > 0 && bellyLevel < 3)
                         {
-                            bellyLevel = Mathf.Min(bellyLevel + 1, 3);
+                            bellyLevel++;
                             //Log.Message("" + bellyLevel * 10 + CurStageIndex);
                         }
                     }
@@ -405,6 +399,9 @@ namespace SlimeGirl
                             severityIsZero = true;
                         }
                     }
+
+                    var thought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, bellyLevel);
+                    needs?.mood?.thoughts?.memories?.TryGainMemory(thought);
                     SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
                 }
                 
@@ -412,7 +409,20 @@ namespace SlimeGirl
 
                 Severity -= hungerFactor;
 
-                pawn?.needs?.food?.CurLevel += hungerFactor * 10;
+                needs?.food?.CurLevel += hungerFactor * 10;
+            }
+            else
+            {
+                count += delta;
+
+                if (count >= maxCount)
+                {
+                    count = 0;
+
+                    var thought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, bellyLevel);
+                    pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought);
+                }
+
             }
             //Log.Message("Tick");
         }
@@ -458,6 +468,76 @@ namespace SlimeGirl
 
     public static class SlimeCore
     {
+        private static readonly HashSet<xxx.rjwSextype> ValidSexTypes =
+        [
+          xxx.rjwSextype.Vaginal,
+          xxx.rjwSextype.Anal,
+          xxx.rjwSextype.Oral,
+          xxx.rjwSextype.DoublePenetration,
+          xxx.rjwSextype.Handjob,
+          xxx.rjwSextype.Boobjob,
+          xxx.rjwSextype.Footjob,
+          xxx.rjwSextype.Fellatio, 
+          xxx.rjwSextype.Sixtynine
+        ];
+
+        private static readonly HashSet<xxx.rjwSextype> CumInSexTypes =
+        [
+          xxx.rjwSextype.Vaginal,
+          xxx.rjwSextype.Anal,
+          xxx.rjwSextype.Oral,
+          xxx.rjwSextype.DoublePenetration,
+          xxx.rjwSextype.Fellatio,
+          xxx.rjwSextype.Sixtynine
+        ];
+
+        public static void ApplyCumToSlime(Pawn slime, Pawn cumSource, SexProps props)
+        {
+            if (slime.def == SlimeRaceDefOf.Rjw_Slime_Blue)
+            {
+                var sexType = props.sexType;
+                if (ValidSexTypes.Contains(sexType))
+                {
+                    if (slime.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.Hediff_Slime) is Hediff_Slime hediff_Slime)
+                    {
+                        float totalFluid = 0f;
+                        foreach (var penis in cumSource.GetPenises())
+                        {
+                            totalFluid += penis.SexPart.GetPartComp().FluidAmount;
+                        }
+
+                        hediff_Slime.Severity += totalFluid / 100f;
+                        hediff_Slime.count = 0;
+                        hediff_Slime.severityIsZero = false;
+
+                        int bellyLevel = hediff_Slime.bellyLevel;
+                        int curStageIndex = hediff_Slime.CurStageIndex;
+                        if (curStageIndex > bellyLevel && CumInSexTypes.Contains(sexType))
+                        {
+                            hediff_Slime.bellyLevel = curStageIndex;
+                        }
+                        else
+                        if (bellyLevel > 0)
+                        {
+                            var refreshThought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, bellyLevel);
+                            slime.needs?.mood?.thoughts?.memories?.TryGainMemory(refreshThought);
+                            ChangeBodyType(slime, hediff_Slime.GetCurrentBodyType());
+                            return;
+                        }
+                        else
+                        {
+                            ChangeBodyType(slime, hediff_Slime.GetCurrentBodyType());
+                            return;
+                        }
+
+                        var goodThought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, curStageIndex);
+                        slime.needs?.mood?.thoughts?.memories?.TryGainMemory(goodThought);
+                        ChangeBodyType(slime, hediff_Slime.GetCurrentBodyType());
+                    }
+                }
+            }
+        }
+
         public static void ChangeBodyType(Pawn pawn, int level)
         {
             BodyTypeDef currentBodyType = pawn?.story?.bodyType;

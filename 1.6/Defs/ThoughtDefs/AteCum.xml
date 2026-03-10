@@ -1,0 +1,30 @@
+<Defs>
+
+    <ThoughtDef>
+        <defName>SlimeAteCum</defName>
+        <durationDays>0.5</durationDays>
+        <stages>
+            <li>
+                <label>no white stuff</label>
+                <description>Want that white stuff.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+            <li>
+                <label>slightly filled</label>
+                <description>Tasty, but i want more.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+            <li>
+                <label>filled to the brim</label>
+                <description>There's so much in my belly&#9825;</description>
+                <baseMoodEffect>5</baseMoodEffect>
+            </li>
+            <li>
+                <label>extremely full</label>
+                <description>Aaahh.. i'm so full...&#9825;</description>
+                <baseMoodEffect>8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>
