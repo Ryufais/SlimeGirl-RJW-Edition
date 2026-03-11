@@ -5,6 +5,7 @@
 		<combatPower>60</combatPower>
 		<canBeSapper>true</canBeSapper>
 		<race>Rjw_Slime_Blue</race>
+		<minGenerationAge>20</minGenerationAge>
 		<maxGenerationAge>30</maxGenerationAge>
 		<invNutrition>0</invNutrition>
 		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
