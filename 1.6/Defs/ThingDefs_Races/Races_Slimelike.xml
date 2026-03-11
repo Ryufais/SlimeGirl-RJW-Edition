@@ -35,6 +35,100 @@
 						<li>(2,1)</li>
 					</points>
 				</growthFactorByAge>
+				<raceGenes>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>AptitudeStrong_Animals</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>AptitudeStrong_Plants</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>AptitudeStrong_Melee</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>AptitudeTerrible_Shooting</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>MinTemp_SmallIncrease</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>MaxTemp_SmallDecrease</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>AptitudeTerrible_Social</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>AptitudePoor_Intellectual</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>WoundHealing_Fast</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>Superclotting</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>FireWeakness</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>ToxResist_Total</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>Libido_High</defName>
+						<chance>100</chance>
+					</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">
+						<defName>UVSensitivity_Mild</defName>
+						<chance>100</chance>
+					</li>
+				</raceGenes>
+				<newbornBackstoryFilter>
+					<li>
+						<categories>
+							<li>SlimeStory</li>
+						</categories>
+						<commonality>100</commonality>
+					</li>
+				</newbornBackstoryFilter>
+				
+				<childBackstoryFilter>
+					<li>
+						<categories>
+							<li>SlimeStory</li>
+						</categories>
+						<commonality>100</commonality>
+					</li>
+				</childBackstoryFilter>
+				
+				<adultBackstoryFilter>
+					<li>
+						<categories>
+							<li>SlimeStory</li>
+						</categories>
+						<commonality>100</commonality>
+					</li>
+				</adultBackstoryFilter>
+				
+				<adultVatBackstoryFilter>
+					<li>
+						<categories>
+							<li>SlimeStory</li>
+							<li>SlimeWild</li>
+						</categories>
+						<commonality>100</commonality>
+					</li>
+				</adultVatBackstoryFilter>
 				<alienPartGenerator>
 					<oldHairAgeRange>650~750</oldHairAgeRange>
 					<headTypes>
@@ -235,6 +329,23 @@
 				</apparelList>
 				<whiteApparelList>
 				</whiteApparelList>
+				<xenotypeList>
+					<li MayRequire="Ludeon.RimWorld.Biotech">SLXenotype</li>
+				</xenotypeList>
+
+				<blackXenotypeList MayRequire="Ludeon.RimWorld.Biotech">
+					<li MayRequire="Ludeon.RimWorld.Biotech">Dirtmole</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Genie</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Hussar</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Sanguophage</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Neanderthal</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Pigskin</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Impid</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Waster</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Yttakin</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Highmate</li>
+				</blackXenotypeList>
+				
 				<blackEndoCategories>
 					<li>Melanin</li>
 					<li>HairColor</li>
@@ -431,8 +542,9 @@
 				</li>
 			</lifeStageAges>
 			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
-			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitPawn</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
 			<specialShadowData>
 				<volume>(0.3, 0.8, 0.4)</volume>
 				<offset>(0,0,-0.3)</offset>

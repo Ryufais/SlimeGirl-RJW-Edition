@@ -12,5 +12,6 @@
 		<li>/</li>
 		<li>1.6</li>
 		<li IfModActive="gguake.apparelbodyresolver">Mods/ApparelBodyTypeResolver</li>
+		<li IfModActive="Ludeon.RimWorld.Biotech">Mods/Biotech</li>
 	</v1.6>
 </loadFolders>

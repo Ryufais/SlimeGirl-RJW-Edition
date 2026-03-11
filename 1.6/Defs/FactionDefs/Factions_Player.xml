@@ -37,14 +37,9 @@
 		<factionIconPath>Things/Icon/Slime_Icon</factionIconPath>
 		<settlementTexturePath>Things/Icon/Slime_Icon</settlementTexturePath>
 		<techLevel>Medieval</techLevel>
-		<backstoryFilters>
-			<li>
-				<categories>
-					<li>Offworld</li>
-				</categories>
-				<commonality>1</commonality>
-			</li>
-		</backstoryFilters>
+		<backstoryCategories>
+			<li>Offworld</li>
+		</backstoryCategories>
 		<startingResearchTags>
 			<li>ClassicStart</li>
 		</startingResearchTags>
@@ -81,14 +76,9 @@
 		<settlementTexturePath>Things/Icon/Slime_Icon</settlementTexturePath>
 		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
 		<techLevel>Spacer</techLevel>
-		<backstoryFilters>
-			<li>
-				<categories>
-					<li>Offworld</li>
-				</categories>
-				<commonality>1</commonality>
-			</li>
-		</backstoryFilters>
+		<backstoryCategories>
+			<li>Offworld</li>
+		</backstoryCategories>
 		<caravanTraderKinds>
 			<li>Caravan_Outlander_Exotic</li>
 			<li>Caravan_Outlander_BulkGoods</li>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XenotypeIconDef>
+		<defName>SLXenotypeIconDef</defName>
+		<texPath>Things/Icon/Slime_Icon</texPath>
+	</XenotypeIconDef>
+
+	<XenotypeDef>
+		<defName>SLXenotype</defName>
+		<label>Slime</label>
+		<description>A gooey and viscous race capable of mimicking humanoid appearance and speech—albeit imperfectly. they are subjects born of forbidden biological experiments conducted from beyond the Rim.\nThey typically live together in large colonies away from human civilization.</description>
+		<iconPath>Things/Icon/Slime_Icon</iconPath>
+		<inheritable>true</inheritable>
+		<displayPriority>1000</displayPriority>
+		<genes>
+			<li>AptitudeStrong_Animals</li>
+			<li>AptitudeStrong_Plants</li>
+			<li>AptitudeStrong_Melee</li>
+			<li>AptitudeTerrible_Shooting</li>
+			<li>MinTemp_SmallDecrease</li>
+			<li>MaxTemp_SmallDecrease</li>
+			<li>AptitudeTerrible_Social</li>
+			<li>AptitudePoor_Intellectual</li>
+			<li>WoundHealing_Fast</li>
+			<li>Superclotting</li>
+			<li>FireWeakness</li>
+			<li>ToxResist_Total</li>
+			<li>Libido_High</li>
+			<li>UVSensitivity_Mild</li>		
+		</genes>
+		<!-- <factionlessGenerationWeight>0</factionlessGenerationWeight> -->
+	</XenotypeDef>
+</Defs>
