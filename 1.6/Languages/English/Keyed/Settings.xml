@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<SLSettings>SlimeGirl</SLSettings>
+<SLSettingsCorpseTitle>Corpse</SLSettingsCorpseTitle>
+<SLPermaDeathThreshold>Dies permanently at: {0} Deaths</SLPermaDeathThreshold>
+<SLPermaDeathThreshold_desc>Sets the threshold at which Slime can no longer revive</SLPermaDeathThreshold_desc>
+
+</LanguageData>

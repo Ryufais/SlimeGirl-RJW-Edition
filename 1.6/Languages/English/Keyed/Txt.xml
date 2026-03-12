@@ -7,6 +7,7 @@
 	<SlimeRefugeePodCrash_Hostile></SlimeRefugeePodCrash_Hostile>
 	<SlimeRefugeePodCrash_NonHostile></SlimeRefugeePodCrash_NonHostile>
 
-	<RemainTime>Revives in</RemainTime>
+	<SLRemainTime>Revives in</SLRemainTime>
+	<SlimeCoreDead>Core damaged beyond repair</SlimeCoreDead>
 
 </LanguageData>
