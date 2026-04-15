@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<ThingDef Name="BodyPartNaturalBase" ParentName="BodyPartBase"  Abstract="True">
+	<ThingDef Name="BodyPartSlimeNaturalBase" ParentName="BodyPartBase"  Abstract="True">
 		<graphicData>
 			<texPath>Things/Slime_Corpse</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -14,7 +14,7 @@
 		</statBases>
 	</ThingDef>
 
-	<ThingDef ParentName="BodyPartNaturalBase">
+	<ThingDef ParentName="BodyPartSlimeNaturalBase">
 		<defName>SlimeCore</defName>
 		<label>slime core</label>
 		<description>Slime "heart".</description>
