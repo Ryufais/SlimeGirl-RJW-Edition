@@ -22,7 +22,7 @@ namespace SlimeGirl
     public static class SlimeGirlRJWPatch
     {
         private static readonly Type patchType = typeof(SlimeGirlRJWPatch);
-        public static BodyTypeDef[] SlimeBodyLookup = new BodyTypeDef[34]; 
+        public static readonly BodyTypeDef[] SlimeBodyLookup = new BodyTypeDef[34]; 
          
         static SlimeGirlRJWPatch()
         {
@@ -35,8 +35,8 @@ namespace SlimeGirl
             harmonyInstance.Patch(AccessTools.Method(typeof(WildManUtility), nameof(WildManUtility.IsWildMan)), null, new HarmonyMethod(patchType, nameof(IsWildMan_Postfix)), null);
 
             SlimeRaceDefOf.Corpse_Rjw_Slime_Blue?.thingClass = typeof(SlimeCorpse);
-         
-            SlimeBodyLookup[0] = SlimeBodyTypeDefOf.AA;
+
+            SlimeBodyLookup[0] = BodyTypeDefOf.Female;
             SlimeBodyLookup[1] = SlimeBodyTypeDefOf.AB;
             SlimeBodyLookup[2] = SlimeBodyTypeDefOf.AC;
             SlimeBodyLookup[3] = SlimeBodyTypeDefOf.AD;

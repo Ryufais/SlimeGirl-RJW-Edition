@@ -135,7 +135,7 @@
 						<li>SlimeFace</li>
 					</headTypes>
 					<bodyTypes>
-						<li>AA</li>
+						<li>Female</li>
 						<li>AB</li>
 						<li>AC</li>
 						<li>AD</li>
@@ -224,7 +224,7 @@
 						</Age>
 						<!-- <Age For="SlimelikeTeenager">Things/Slime/Bodies/Naked_AA</Age> -->
 						<!-- <Age For="SlimelikeAdult">Things/Slime/Bodies/Naked_AA</Age> -->
-						<BodyType For="AA">Things/Slime/Bodies/Naked_AA</BodyType>
+						<BodyType For="Female">Things/Slime/Bodies/Naked_Female</BodyType>
 						<BodyType For="AB">Things/Slime/Bodies/Naked_AB</BodyType>
 						<BodyType For="AC">Things/Slime/Bodies/Naked_AC</BodyType>
 						<BodyType For="AD">Things/Slime/Bodies/Naked_AD</BodyType>

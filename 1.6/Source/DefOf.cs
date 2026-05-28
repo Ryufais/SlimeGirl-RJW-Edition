@@ -59,7 +59,7 @@ namespace SlimeGirl
     [DefOf]
     public class  SlimeBodyTypeDefOf
     {
-        public static BodyTypeDef AA;
+        //public static BodyTypeDef AA;
         public static BodyTypeDef AB;
         public static BodyTypeDef AC;
         public static BodyTypeDef AD;

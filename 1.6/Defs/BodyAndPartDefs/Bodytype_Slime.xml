@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <BodyTypeDef>
+    <!-- <BodyTypeDef>
         <defName>AA</defName>
         <bodyNakedGraphicPath>Things/Slime/Bodies/Naked_AA</bodyNakedGraphicPath>
         <bodyDessicatedGraphicPath>Things/Slime_Corpse</bodyDessicatedGraphicPath>
-    </BodyTypeDef>
+    </BodyTypeDef> -->
 
     <BodyTypeDef>
         <defName>AB</defName>
