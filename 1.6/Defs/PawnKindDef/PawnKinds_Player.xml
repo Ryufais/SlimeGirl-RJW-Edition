@@ -50,6 +50,7 @@
 			<li>
 				<categories>
 					<li>SlimeStory</li>
+					<li>SlimeWild</li>
 				</categories>
 			</li>
 		</backstoryFiltersOverride>
@@ -196,7 +197,7 @@
 		<label>slime berserker</label>
 		<invNutrition>1</invNutrition>
 		<apparelMoney>1000~4000</apparelMoney>
-		<itemQuality>Good</itemQuality>	
+		<itemQuality>Good</itemQuality>
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="SlimeBasePawnKind_Combat">

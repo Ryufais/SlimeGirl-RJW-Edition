@@ -193,6 +193,14 @@
 				</alienPartGenerator>
 				<disallowedTraits>
 					<li>
+						<defName Degree="-1">Beauty</defName>
+						<chance>100</chance>
+					</li>
+					<li>
+						<defName Degree="-2">Beauty</defName>
+						<chance>100</chance>
+					</li>
+					<li>
 						<defName>AnnoyingVoice</defName>
 						<chance>100</chance>
 					</li>
@@ -200,7 +208,37 @@
 						<defName>CreepyBreathing</defName>
 						<chance>100</chance>
 					</li>
+					<li>
+						<defName>DislikesMen</defName>
+						<chance>100</chance>
+					</li>
+					<li>
+						<defName>DislikesWomen</defName>
+						<chance>100</chance>
+					</li>
+					<li>
+						<defName>Pyromaniac</defName>
+						<chance>100</chance>
+					</li>
+					<li>
+						<defName Degree="-1">DrugDesire</defName>
+						<chance>100</chance>
+					</li>
+					<li>
+						<defName Degree="1">DrugDesire</defName>
+						<chance>100</chance>
+					</li>
+					<li>
+						<defName Degree="2">DrugDesire</defName>
+						<chance>100</chance>
+					</li>
 				</disallowedTraits>
+				<forcedRaceTraitEntries>
+					<li>
+						<defName Degree="2">NaturalMood</defName>
+						<chance>100</chance>
+					</li>
+				</forcedRaceTraitEntries>
 			</generalSettings>
 			<graphicPaths>
 				<skinColor>(1,1,1,1)</skinColor>
@@ -468,7 +506,6 @@
 			<fleshType>Slime_Flesh</fleshType>
 			<leatherDef>Leather_Human</leatherDef>
 			<needsRest>true</needsRest>
-			<hasGenders>true</hasGenders>
 			<body>SlimeBody</body>
 			<baseBodySize>1</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
