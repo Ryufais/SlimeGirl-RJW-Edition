@@ -327,61 +327,52 @@ namespace SlimeGirl
     }
     public class Hediff_Slime : HediffWithComps
     {
+        private Hediff_SlimeDef baseDef;
+        public Hediff_SlimeDef Def => baseDef ??= (Hediff_SlimeDef)def;
+
         public int bellyLevel;
         //public Hediff bukake;
 
         public bool severityIsZero = true;
 
-        public int maxCount;
         public float tickPerHunger;
 
-        public int count;
+        public int Countdown;
         #region Properties
         public override bool ShouldRemove => false;
         #endregion
 
-        public override float Severity
-        {
-            get
-            {
-                return severityInt;
-            }
-            set
-            {
-                base.Severity = value;
-
-            }
-        }
         public override void PostMake()
         {
             base.PostMake();
-            maxCount = ((Hediff_SlimeDef)def).maxCount;
-            tickPerHunger = ((Hediff_SlimeDef)def).tickPerHunger;
+            Countdown = Def.Countdown;
+            tickPerHunger = Def.tickPerHunger;
             SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
             //Log.Message("PostMake - bellyLevel: " + bellyLevel + " severity: " + severityInt);
         }
 
         public override void PostAdd(DamageInfo? dinfo)
         {
-            base.PostAdd(dinfo);          
+            base.PostAdd(dinfo);
             SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
         }
 
         public override void TickInterval(int delta)
         {
+            Countdown -= delta;
+
             if (!severityIsZero)
             {
-                count += delta;
-
                 var needs = pawn?.needs;
-
-                if (count >= maxCount)
+                if (Countdown <= 0)
                 {
-                    count -= maxCount;
+                    Countdown = Def.Countdown;
 
-                    if (severityInt > 0)
+                    int oldBellyLevel = bellyLevel;
+
+                    if (Severity > 0)
                     {
-                        if(CurStageIndex > 0 && bellyLevel < 3)
+                        if (CurStageIndex > 0 && bellyLevel < 3)
                         {
                             bellyLevel++;
                             //Log.Message("" + bellyLevel * 10 + CurStageIndex);
@@ -400,30 +391,39 @@ namespace SlimeGirl
                         }
                     }
 
+                    if (bellyLevel != oldBellyLevel)
+                    {
+                        SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
+                    }
+
                     var thought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, bellyLevel);
                     needs?.mood?.thoughts?.memories?.TryGainMemory(thought);
-                    SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
                 }
-                
-                float hungerFactor = tickPerHunger * delta;
 
-                Severity -= hungerFactor;
+                if (pawn.IsHashIntervalTick(60, delta))
+                {
+                    int ticksToProcess = Mathf.Max(60, delta);
+                    var foodNeed = needs?.food;
+                    float hungerFactor = tickPerHunger * ticksToProcess;
+                    Severity -= hungerFactor;
 
-                needs?.food?.CurLevel += hungerFactor * 10;
+                    foodNeed?.CurLevel += hungerFactor * 10f;
+                }
+
             }
             else
             {
-                count += delta;
-
-                if (count >= maxCount)
+                if (Countdown <= 0)
                 {
-                    count = 0;
+                    Countdown = Def.Countdown;
 
                     var thought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, bellyLevel);
                     pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought);
                 }
 
             }
+
+
             //Log.Message("Tick");
         }
 
@@ -434,25 +434,24 @@ namespace SlimeGirl
         public override void ExposeData()
         {
             base.ExposeData();
-            maxCount = ((Hediff_SlimeDef)def).maxCount;
-            tickPerHunger = ((Hediff_SlimeDef)def).tickPerHunger;
-            Scribe_Values.Look(ref count, "count");
-            Scribe_Values.Look(ref bellyLevel, "bellyLevel");
-            Scribe_Values.Look(ref severityIsZero, "dirtyFlag");
+            Scribe_Values.Look(ref tickPerHunger, "tickPerHunger", Def.tickPerHunger);
+            Scribe_Values.Look(ref Countdown, "Countdown", Countdown);
+            Scribe_Values.Look(ref bellyLevel, "bellyLevel", bellyLevel);
+            Scribe_Values.Look(ref severityIsZero, "severityIsZero", severityIsZero);
         }
         public int GetCurrentBodyType()
         {
-            return bellyLevel*10 + CurStageIndex;
+            return bellyLevel * 10 + CurStageIndex;
         }
         public override string TipStringExtra
         {
             get
             {
                 StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.Append("CurStageIndex: " + CurStageIndex +
-                    "\ncount: " + count +
-                    "\nbellyLevel: " + bellyLevel +
-                    "\nseverityIsZero: " + severityIsZero);
+                stringBuilder.AppendLine($"CurStageIndex: {CurStageIndex}");
+                stringBuilder.AppendLine($"Countdown: {Countdown}");
+                stringBuilder.AppendLine($"bellyLevel: {bellyLevel}");
+                stringBuilder.Append($"severityIsZero: {severityIsZero}");
                 return stringBuilder.ToString();
             }
         }
@@ -461,7 +460,7 @@ namespace SlimeGirl
 
     public class Hediff_SlimeDef:HediffDef
     {
-        public int maxCount;
+        public int Countdown;
         public float tickPerHunger;
         
     }
@@ -507,7 +506,7 @@ namespace SlimeGirl
                         }
 
                         hediff_Slime.Severity += totalFluid / 100f;
-                        hediff_Slime.count = 0;
+                        hediff_Slime.Countdown = hediff_Slime.Def.Countdown;
                         hediff_Slime.severityIsZero = false;
 
                         int bellyLevel = hediff_Slime.bellyLevel;

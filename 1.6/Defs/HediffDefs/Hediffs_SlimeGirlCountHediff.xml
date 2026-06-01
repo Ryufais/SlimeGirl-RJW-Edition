@@ -11,7 +11,7 @@
 		<maxSeverity>1</maxSeverity>
 		<isBad>false</isBad>
 		<tendable>false</tendable>
-		<maxCount>6000</maxCount>
+		<Countdown>6000</Countdown>
 		<tickPerHunger>0.00001</tickPerHunger>
 		<stages>
 			<li>
