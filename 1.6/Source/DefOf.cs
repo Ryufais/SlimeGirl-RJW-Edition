@@ -77,4 +77,25 @@ namespace SlimeGirl
         public static BodyTypeDef DD;
     }
 
+    [DefOf]
+    public class SlimeHeadTypeDefOf
+    {
+        public static HeadTypeDef SlimeHeadFemale;
+        public static HeadTypeDef SlimeHeadAB;
+        public static HeadTypeDef SlimeHeadAC;
+        public static HeadTypeDef SlimeHeadAD;
+        public static HeadTypeDef SlimeHeadBA;
+        public static HeadTypeDef SlimeHeadBB;
+        public static HeadTypeDef SlimeHeadBC;
+        public static HeadTypeDef SlimeHeadBD;
+        public static HeadTypeDef SlimeHeadCA;
+        public static HeadTypeDef SlimeHeadCB;
+        public static HeadTypeDef SlimeHeadCC;
+        public static HeadTypeDef SlimeHeadCD;
+        public static HeadTypeDef SlimeHeadDA;
+        public static HeadTypeDef SlimeHeadDB;
+        public static HeadTypeDef SlimeHeadDC;
+        public static HeadTypeDef SlimeHeadDD;
+    }
+
 }

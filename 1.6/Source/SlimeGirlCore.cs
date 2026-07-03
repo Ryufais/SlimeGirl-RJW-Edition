@@ -1,19 +1,12 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using RimWorld.Planet;
 using rjw;
 using rjw.Modules.Interactions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
 using System.Text;
 using UnityEngine;
 using Verse;
-using Verse.AI;
-using Verse.Noise;
-using Verse.Sound;
 
 
 namespace SlimeGirl
@@ -22,8 +15,19 @@ namespace SlimeGirl
     public static class SlimeGirlRJWPatch
     {
         private static readonly Type patchType = typeof(SlimeGirlRJWPatch);
-        public static readonly BodyTypeDef[] SlimeBodyLookup = new BodyTypeDef[34]; 
-         
+
+        // Slime BodyDef array
+        public static readonly BodyTypeDef[] SlimeBodyLookup = [BodyTypeDefOf.Female, SlimeBodyTypeDefOf.AB, SlimeBodyTypeDefOf.AC, SlimeBodyTypeDefOf.AD, 
+                                                                SlimeBodyTypeDefOf.BA, SlimeBodyTypeDefOf.BB, SlimeBodyTypeDefOf.BC, SlimeBodyTypeDefOf.BD, 
+                                                                SlimeBodyTypeDefOf.CA, SlimeBodyTypeDefOf.CB, SlimeBodyTypeDefOf.CC, SlimeBodyTypeDefOf.CD, 
+                                                                SlimeBodyTypeDefOf.DA, SlimeBodyTypeDefOf.DB, SlimeBodyTypeDefOf.DC, SlimeBodyTypeDefOf.DD];
+
+        // Slime HeadDef array
+        public static readonly HeadTypeDef[] SlimeHeadLookup = [SlimeHeadTypeDefOf.SlimeHeadFemale, SlimeHeadTypeDefOf.SlimeHeadAB, SlimeHeadTypeDefOf.SlimeHeadAC, SlimeHeadTypeDefOf.SlimeHeadAD,
+                                                                SlimeHeadTypeDefOf.SlimeHeadBA, SlimeHeadTypeDefOf.SlimeHeadBB, SlimeHeadTypeDefOf.SlimeHeadBC, SlimeHeadTypeDefOf.SlimeHeadBD, 
+                                                                SlimeHeadTypeDefOf.SlimeHeadCA, SlimeHeadTypeDefOf.SlimeHeadCB, SlimeHeadTypeDefOf.SlimeHeadCC, SlimeHeadTypeDefOf.SlimeHeadCD, 
+                                                                SlimeHeadTypeDefOf.SlimeHeadDA, SlimeHeadTypeDefOf.SlimeHeadDB, SlimeHeadTypeDefOf.SlimeHeadDC, SlimeHeadTypeDefOf.SlimeHeadDD];
+
         static SlimeGirlRJWPatch()
         {
             Harmony harmonyInstance = new("com.SlimeGirl.rimworld.mod");
@@ -33,29 +37,21 @@ namespace SlimeGirl
             // new HarmonyMethod(patchType, nameof(MakeCorpsePrefix)), null, null);
             harmonyInstance.Patch(AccessTools.Method(typeof(Pawn_NeedsTracker), nameof(Pawn_NeedsTracker.ShouldHaveNeed)), null, new HarmonyMethod(patchType, nameof(ShouldHaveNeedPostfix)), null);
             harmonyInstance.Patch(AccessTools.Method(typeof(WildManUtility), nameof(WildManUtility.IsWildMan)), null, new HarmonyMethod(patchType, nameof(IsWildMan_Postfix)), null);
+            //harmonyInstance.Patch(AccessTools.Method(typeof(PawnRenderNode_Body), nameof(PawnRenderNode_Body.GraphicFor)), null, new HarmonyMethod(patchType, nameof(GraphicForPostfix)), null);
 
             SlimeRaceDefOf.Corpse_Rjw_Slime_Blue?.thingClass = typeof(SlimeCorpse);
-
-            SlimeBodyLookup[0] = BodyTypeDefOf.Female;
-            SlimeBodyLookup[1] = SlimeBodyTypeDefOf.AB;
-            SlimeBodyLookup[2] = SlimeBodyTypeDefOf.AC;
-            SlimeBodyLookup[3] = SlimeBodyTypeDefOf.AD;
-
-            SlimeBodyLookup[10] = SlimeBodyTypeDefOf.BA;
-            SlimeBodyLookup[11] = SlimeBodyTypeDefOf.BB;
-            SlimeBodyLookup[12] = SlimeBodyTypeDefOf.BC;
-            SlimeBodyLookup[13] = SlimeBodyTypeDefOf.BD;
-
-            SlimeBodyLookup[20] = SlimeBodyTypeDefOf.CA;
-            SlimeBodyLookup[21] = SlimeBodyTypeDefOf.CB;
-            SlimeBodyLookup[22] = SlimeBodyTypeDefOf.CC;
-            SlimeBodyLookup[23] = SlimeBodyTypeDefOf.CD;
-
-            SlimeBodyLookup[30] = SlimeBodyTypeDefOf.DA;
-            SlimeBodyLookup[31] = SlimeBodyTypeDefOf.DB;
-            SlimeBodyLookup[32] = SlimeBodyTypeDefOf.DC;
-            SlimeBodyLookup[33] = SlimeBodyTypeDefOf.DD;
         }
+
+        //public static void GraphicForPostfix(ref Graphic __result, Pawn pawn)
+        //{
+        //    if (pawn.def != SlimeRaceDefOf.Rjw_Slime_Blue) return;
+
+        //    var bodytype = pawn.story.bodyType;
+        //    if (bodytype == BodyTypeDefOf.Child) return;
+
+        //    __result = SlimeCore.ChangeBodyGraphics(pawn, pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.Hediff_Slime) is Hediff_Slime hediff_Slime ? hediff_Slime.GetCurrentBodyType() : 0) ?? __result;
+        //}
+
         public static void TransferFluidsPostfix(SexProps props)
         {
             Pawn pawn = props?.pawn;
@@ -317,13 +313,13 @@ namespace SlimeGirl
         {
             if (___pawn.def == SlimeRaceDefOf.Rjw_Slime_Blue)
             {
-                if(nd == SlimeNeedDefOf.Outdoors)
+                if (nd == SlimeNeedDefOf.Outdoors)
                 {
                     __result = false;
                 }
             }
         }
-        
+
     }
     public class Hediff_Slime : HediffWithComps
     {
@@ -347,14 +343,12 @@ namespace SlimeGirl
             base.PostMake();
             Countdown = Def.Countdown;
             tickPerHunger = Def.tickPerHunger;
-            SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
             //Log.Message("PostMake - bellyLevel: " + bellyLevel + " severity: " + severityInt);
         }
 
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
         }
 
         public override void TickInterval(int delta)
@@ -362,7 +356,7 @@ namespace SlimeGirl
             Countdown -= delta;
 
             if (!severityIsZero)
-            {
+            {          
                 var needs = pawn?.needs;
                 if (Countdown <= 0)
                 {
@@ -393,7 +387,7 @@ namespace SlimeGirl
 
                     if (bellyLevel != oldBellyLevel)
                     {
-                        SlimeCore.ChangeBodyType(pawn, GetCurrentBodyType());
+                        SlimeCore.SwitchBody(pawn, GetCurrentBodyType());
                     }
 
                     var thought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, bellyLevel);
@@ -409,10 +403,10 @@ namespace SlimeGirl
 
                     foodNeed?.CurLevel += hungerFactor * 10f;
                 }
-
+              
             }
             else
-            {
+            {      
                 if (Countdown <= 0)
                 {
                     Countdown = Def.Countdown;
@@ -441,7 +435,7 @@ namespace SlimeGirl
         }
         public int GetCurrentBodyType()
         {
-            return bellyLevel * 10 + CurStageIndex;
+            return (bellyLevel * 4) + CurStageIndex;
         }
         public override string TipStringExtra
         {
@@ -458,15 +452,15 @@ namespace SlimeGirl
 
     }
 
-    public class Hediff_SlimeDef:HediffDef
+    public class Hediff_SlimeDef : HediffDef
     {
         public int Countdown;
         public float tickPerHunger;
-        
     }
 
     public static class SlimeCore
     {
+
         private static readonly HashSet<xxx.rjwSextype> ValidSexTypes =
         [
           xxx.rjwSextype.Vaginal,
@@ -476,7 +470,7 @@ namespace SlimeGirl
           xxx.rjwSextype.Handjob,
           xxx.rjwSextype.Boobjob,
           xxx.rjwSextype.Footjob,
-          xxx.rjwSextype.Fellatio, 
+          xxx.rjwSextype.Fellatio,
           xxx.rjwSextype.Sixtynine
         ];
 
@@ -509,7 +503,7 @@ namespace SlimeGirl
                         hediff_Slime.Countdown = hediff_Slime.Def.Countdown;
                         hediff_Slime.severityIsZero = false;
 
-                        int bellyLevel = hediff_Slime.bellyLevel;
+                        int bellyLevel = hediff_Slime.bellyLevel;   
                         int curStageIndex = hediff_Slime.CurStageIndex;
                         if (curStageIndex > bellyLevel && CumInSexTypes.Contains(sexType))
                         {
@@ -520,102 +514,95 @@ namespace SlimeGirl
                         {
                             var refreshThought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, bellyLevel);
                             slime.needs?.mood?.thoughts?.memories?.TryGainMemory(refreshThought);
-                            ChangeBodyType(slime, hediff_Slime.GetCurrentBodyType());
-                            return;
+                                SwitchBody(slime, hediff_Slime.GetCurrentBodyType());
+                                return;
                         }
                         else
                         {
-                            ChangeBodyType(slime, hediff_Slime.GetCurrentBodyType());
-                            return;
+                                SwitchBody(slime, hediff_Slime.GetCurrentBodyType());
+                                return;
                         }
 
                         var goodThought = ThoughtMaker.MakeThought(SlimeThoughtDefOf.SlimeAteCum, curStageIndex);
                         slime.needs?.mood?.thoughts?.memories?.TryGainMemory(goodThought);
-                        ChangeBodyType(slime, hediff_Slime.GetCurrentBodyType());
+                        SwitchBody(slime, hediff_Slime.GetCurrentBodyType());
                     }
                 }
             }
         }
 
-        public static void ChangeBodyType(Pawn pawn, int level)
+        public static void SwitchBody(Pawn pawn, int level)
         {
-            BodyTypeDef currentBodyType = pawn?.story?.bodyType;
+            if (pawn?.story is null) return;
 
-            int searchIndex = Mathf.Clamp(level, 0, SlimeGirlRJWPatch.SlimeBodyLookup.Length - 1);
+            var pawnStory = pawn.story;
+            bool Switched = false;
+            //var currentBodyGraphic = pawn?.Drawer?.renderer?.BodyGraphic;
 
-            BodyTypeDef chosenBodyType = null;
+            int searchBodyIndex = Mathf.Clamp(level, 0, SlimeGirlRJWPatch.SlimeBodyLookup.Length - 1);
+            int searchHeadIndex = Mathf.Clamp(level, 0, SlimeGirlRJWPatch.SlimeHeadLookup.Length - 1);
+            //Graphic chosenBodyGraphic = null;
 
-            for (int i = searchIndex; i >= 0; i--)
+            for (int i = searchBodyIndex; i >= 0; i--)
             {
                 if (SlimeGirlRJWPatch.SlimeBodyLookup[i] != null)
                 {
-                    chosenBodyType = SlimeGirlRJWPatch.SlimeBodyLookup[i];
-                    break; 
+                    BodyTypeDef chosenBodyType = SlimeGirlRJWPatch.SlimeBodyLookup[i];
+                    if (pawnStory.bodyType != chosenBodyType)
+                    {
+                        pawnStory.bodyType = chosenBodyType;
+                        Switched = true;
+                        break;
+                    }
+                    else break;
+                    
                 }
             }
 
-            if (chosenBodyType != null && currentBodyType != chosenBodyType)
+            for (int i = searchHeadIndex; i >= 0; i--)
             {
-                pawn.story?.bodyType = chosenBodyType;
+                if (SlimeGirlRJWPatch.SlimeHeadLookup[i] != null)
+                {
+                    HeadTypeDef chosenHeadType = SlimeGirlRJWPatch.SlimeHeadLookup[i];
+                    if (pawnStory.headType != chosenHeadType)
+                    {
+                        pawnStory.headType = chosenHeadType;
+                        Switched = true;
+                        break;
+                    }
+                    else break;
+                }
+            }
 
-                pawn.Drawer.renderer.SetAllGraphicsDirty();
+            if (Switched)
+            {
+                pawn.Drawer?.renderer?.SetAllGraphicsDirty();
                 PortraitsCache.SetDirty(pawn);
             }
-            
-            /*
-            switch (level)
-            {
-                case 00:
-                    pawn.story.bodyType = SlimeBodyDefOf.AA;
-                    break;
-                case 01:
-                    pawn.story.bodyType = SlimeBodyDefOf.AB;
-                    break;
-                case 02:
-                    pawn.story.bodyType = SlimeBodyDefOf.AC;
-                    break;
-                case 03:
-                    pawn.story.bodyType = SlimeBodyDefOf.AD;
-                    break;
-                case 10:
-                    pawn.story.bodyType = SlimeBodyDefOf.BA;
-                    break;
-                case 11:
-                    pawn.story.bodyType = SlimeBodyDefOf.BB;
-                    break;
-                case 12:
-                    pawn.story.bodyType = SlimeBodyDefOf.BC;
-                    break;
-                case 13:
-                    pawn.story.bodyType = SlimeBodyDefOf.BD;
-                    break;
-                case 20:
-                    pawn.story.bodyType = SlimeBodyDefOf.CA;
-                    break;
-                case 21:
-                    pawn.story.bodyType = SlimeBodyDefOf.CB;
-                    break;
-                case 22:
-                    pawn.story.bodyType = SlimeBodyDefOf.CC;
-                    break;
-                case 23:
-                    pawn.story.bodyType = SlimeBodyDefOf.CD;
-                    break;
-                case 30:
-                    pawn.story.bodyType = SlimeBodyDefOf.DA;
-                    break;
-                case 31:
-                    pawn.story.bodyType = SlimeBodyDefOf.DB;
-                    break;
-                case 32:
-                    pawn.story.bodyType = SlimeBodyDefOf.DC;
-                    break;
-                case 33:
-                    pawn.story.bodyType = SlimeBodyDefOf.DD;
-                    break;
-                default:
-                    break;
-            }*/          
+           
+            //if (chosenBodyType != null && currentBodyType != chosenBodyType)
+            //{
+            //    pawnStory?.bodyType = chosenBodyType;
+
+            //    pawn.Drawer.renderer.SetAllGraphicsDirty();
+            //    PortraitsCache.SetDirty(pawn);
+            //}
+
+            //for (int i = searchIndex; i >= 0; i--)
+            //{
+            //    if (SlimeGirlRJWPatch.SlimeGraphicLookup[i] != null)
+            //    {
+            //        chosenBodyGraphic = SlimeGirlRJWPatch.SlimeGraphicLookup[i];
+            //        break;
+            //    }
+            //}
+
+            //if (chosenBodyGraphic != null && currentBodyGraphic != chosenBodyGraphic)
+            //{
+            //    return chosenBodyGraphic;
+            //}
+
+            //return currentBodyGraphic;
         }
     }
 

@@ -18,5 +18,85 @@
     <defName>SlimeFace</defName>
     <graphicPath>Things/Slime/Heads/SlimeFace_Normal</graphicPath>
   </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadFemale</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_Female</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadAB</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_AB</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadAC</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_AC</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadAD</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_AD</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadBA</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_BA</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadBB</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_BB</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadBC</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_BC</graphicPath>
+  </HeadTypeDef>
+
+   <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadBD</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_BD</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadCA</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_CA</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadCB</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_CB</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadCC</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_CC</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadCD</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_CD</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadDA</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_DA</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadDB</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_DB</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadDC</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_DC</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="Slime_FemaleHeadtypeBase">
+    <defName>SlimeHeadDD</defName>
+    <graphicPath>Things/Slime/Heads/SlimeHead_DD</graphicPath>
+  </HeadTypeDef>
   
 </Defs>

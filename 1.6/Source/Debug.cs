@@ -1,11 +1,5 @@
 ﻿using LudeonTK;
 using RimWorld;
-using rjw;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace SlimeGirl
@@ -18,7 +12,7 @@ namespace SlimeGirl
             if (pawn?.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.Hediff_Slime) is Hediff_Slime slimeHediff)
             {
                 int currentLevel = slimeHediff.GetCurrentBodyType();
-                SlimeCore.ChangeBodyType(pawn, currentLevel);
+                SlimeCore.SwitchBody(pawn, currentLevel);
 
                 Messages.Message($"Updated {pawn.LabelShort} to body level {currentLevel}", MessageTypeDefOf.TaskCompletion);
             }

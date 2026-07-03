@@ -53,7 +53,7 @@
 						<chance>100</chance>
 					</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">
-						<defName>MinTemp_SmallIncrease</defName>
+						<defName>MinTemp_SmallDecrease</defName>
 						<chance>100</chance>
 					</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">
@@ -85,11 +85,11 @@
 						<chance>100</chance>
 					</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">
-						<defName>Libido_High</defName>
+						<defName>UVSensitivity_Mild</defName>
 						<chance>100</chance>
 					</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">
-						<defName>UVSensitivity_Mild</defName>
+						<defName>Libido_High</defName>
 						<chance>100</chance>
 					</li>
 				</raceGenes>
@@ -101,7 +101,7 @@
 						<commonality>100</commonality>
 					</li>
 				</newbornBackstoryFilter>
-				
+
 				<childBackstoryFilter>
 					<li>
 						<categories>
@@ -110,7 +110,7 @@
 						<commonality>100</commonality>
 					</li>
 				</childBackstoryFilter>
-				
+
 				<adultBackstoryFilter>
 					<li>
 						<categories>
@@ -119,7 +119,7 @@
 						<commonality>100</commonality>
 					</li>
 				</adultBackstoryFilter>
-				
+
 				<adultVatBackstoryFilter>
 					<li>
 						<categories>
@@ -132,25 +132,27 @@
 				<alienPartGenerator>
 					<oldHairAgeRange>650~750</oldHairAgeRange>
 					<headTypes>
-						<li>SlimeFace</li>
+						<li>SlimeHeadFemale</li>
+						<!-- <li>SlimeHeadAB</li>
+						<li>SlimeHeadAC</li>
+						<li>SlimeHeadAD</li>
+						<li>SlimeHeadBA</li>
+						<li>SlimeHeadBB</li>
+						<li>SlimeHeadBC</li>
+						<li>SlimeHeadBD</li>
+						<li>SlimeHeadCA</li>
+						<li>SlimeHeadCB</li>
+						<li>SlimeHeadCC</li>
+						<li>SlimeHeadCD</li>
+						<li>SlimeHeadDA</li>
+						<li>SlimeHeadDB</li>
+						<li>SlimeHeadDC</li>
+						<li>SlimeHeadDD</li> -->
+						<li MayRequire="Ludeon.RimWorld.Biotech">SlimeFace</li>
 					</headTypes>
 					<bodyTypes>
 						<li>Female</li>
-						<li>AB</li>
-						<li>AC</li>
-						<li>AD</li>
-						<li>BA</li>
-						<li>BB</li>
-						<li>BC</li>
-						<li>BD</li>
-						<li>CA</li>
-						<li>CB</li>
-						<li>CC</li>
-						<li>CD</li>
-						<li>DA</li>
-						<li>DB</li>
-						<li>DC</li>
-						<li>DD</li>
+						<li MayRequire="Ludeon.RimWorld.Biotech">Child</li>
 					</bodyTypes>
 					<!-- <aliencrowntypes>
 						<li>SlimeFace</li>
@@ -158,10 +160,24 @@
 					<alienbodytypes>
 						<li>SlimeBody</li>
 					</alienbodytypes> -->
-					<headOffset>(0,0)</headOffset>
 					<customDrawSize>(1, 1)</customDrawSize>
 					<customHeadDrawSize>(1,1)</customHeadDrawSize>
 					<customPortraitDrawSize>1,1</customPortraitDrawSize>
+					<headOffset>(0, 0.0)</headOffset>
+					<headOffsetDirectional>
+						<north>
+							<offset>(0, 0.032)</offset>
+						</north>
+						<south>
+							<offset>(0, 0.032)</offset>
+						</south>
+						<east>
+							<offset>(-0.016, 0.024)</offset>
+						</east>
+						<west>
+							<offset>(0.016, 0.024)</offset>
+						</west>
+					</headOffsetDirectional>
 					<headBodyPartDef>SlimeHead</headBodyPartDef>
 					<colorChannels Inherit="False">
 						<li>
@@ -244,24 +260,33 @@
 				<skinColor>(1,1,1,1)</skinColor>
 				<skinShader>Cutout</skinShader>
 				<head>
-					<path>Things/Slime/Heads/</path>
 					<extendedGraphics>
-						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">
-							Things/Slime/Heads/SlimeFace_Normal</Age>
-						<Age For="SlimelikeChild">Things/Slime/Heads/SlimeFace_Normal</Age>
-						<Age For="SlimelikeTeenager">Things/Slime/Heads/SlimeFace_Normal</Age>
-						<Age For="SlimelikeAdult">Things/Slime/Heads/SlimeFace_Normal</Age>
+						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">Things/Slime/Heads/SlimeFace_Normal</Age>
+						<Age For="HumanlikeChild">Things/Slime/Heads/SlimeFace_Normal</Age>
+						<HeadType For="SlimeHeadFemale">Things/Slime/Heads/SlimeHead_Female</HeadType>
+						<HeadType For="SlimeHeadAB">Things/Slime/Heads/SlimeHead_AB</HeadType>
+						<HeadType For="SlimeHeadAC">Things/Slime/Heads/SlimeHead_AC</HeadType>
+						<HeadType For="SlimeHeadAD">Things/Slime/Heads/SlimeHead_AD</HeadType>
+						<HeadType For="SlimeHeadBA">Things/Slime/Heads/SlimeHead_BA</HeadType>
+						<HeadType For="SlimeHeadBB">Things/Slime/Heads/SlimeHead_BB</HeadType>
+						<HeadType For="SlimeHeadBC">Things/Slime/Heads/SlimeHead_BC</HeadType>
+						<HeadType For="SlimeHeadBD">Things/Slime/Heads/SlimeHead_BD</HeadType>
+						<HeadType For="SlimeHeadCA">Things/Slime/Heads/SlimeHead_CA</HeadType>
+						<HeadType For="SlimeHeadCB">Things/Slime/Heads/SlimeHead_CB</HeadType>
+						<HeadType For="SlimeHeadCC">Things/Slime/Heads/SlimeHead_CC</HeadType>
+						<HeadType For="SlimeHeadCD">Things/Slime/Heads/SlimeHead_CD</HeadType>
+						<HeadType For="SlimeHeadDA">Things/Slime/Heads/SlimeHead_DA</HeadType>
+						<HeadType For="SlimeHeadDB">Things/Slime/Heads/SlimeHead_DB</HeadType>
+						<HeadType For="SlimeHeadDC">Things/Slime/Heads/SlimeHead_DC</HeadType>
+						<HeadType For="SlimeHeadDD">Things/Slime/Heads/SlimeHead_DD</HeadType>
+						<Age For="SlimelikeTeenager">Things/Slime/Heads/SlimeHead_Female</Age>
+						<Age For="SlimelikeAdult">Things/Slime/Heads/SlimeHead_Female</Age>
 					</extendedGraphics>
 				</head>
 				<body>
 					<extendedGraphics>
-						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">
-							Things/Slime/Bodies/Baby/NormalSlime</Age>
-						<Age For="SlimelikeChild">
-							<path>Things/Slime/Bodies/Baby/NormalSlime</path>
-						</Age>
-						<!-- <Age For="SlimelikeTeenager">Things/Slime/Bodies/Naked_AA</Age> -->
-						<!-- <Age For="SlimelikeAdult">Things/Slime/Bodies/Naked_AA</Age> -->
+						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">Things/Slime/Bodies/Baby/NormalSlime</Age>
+						<Age For="HumanlikeChild">Things/Slime/Bodies/Baby/NormalSlime</Age>
 						<BodyType For="Female">Things/Slime/Bodies/Naked_Female</BodyType>
 						<BodyType For="AB">Things/Slime/Bodies/Naked_AB</BodyType>
 						<BodyType For="AC">Things/Slime/Bodies/Naked_AC</BodyType>
@@ -278,6 +303,8 @@
 						<BodyType For="DB">Things/Slime/Bodies/Naked_DB</BodyType>
 						<BodyType For="DC">Things/Slime/Bodies/Naked_DC</BodyType>
 						<BodyType For="DD">Things/Slime/Bodies/Naked_DD</BodyType>
+						<Age For="SlimelikeTeenager">Things/Slime/Bodies/Naked_Female</Age>
+						<Age For="SlimelikeAdult">Things/Slime/Bodies/Naked_Female</Age>
 					</extendedGraphics>
 				</body>
 				<skeleton>Things/Slime_Corpse</skeleton>
@@ -383,7 +410,7 @@
 					<li MayRequire="Ludeon.RimWorld.Biotech">Yttakin</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">Highmate</li>
 				</blackXenotypeList>
-				
+
 				<blackEndoCategories>
 					<li>Melanin</li>
 					<li>HairColor</li>
@@ -500,7 +527,7 @@
 			<makesFootprints>false</makesFootprints>
 			<lifeExpectancy>850</lifeExpectancy>
 			<nameCategory>HumanStandard</nameCategory>
-			<bloodDef>Slime_BloodFilth</bloodDef><!-- 피 -->
+			<bloodDef>Slime_BloodFilth</bloodDef>			<!-- 피 -->
 			<bloodSmearDef>Slime_BloodSmear</bloodSmearDef>
 			<!-- <trainability>Advanced</trainability> -->
 			<fleshType>Slime_Flesh</fleshType>
@@ -538,8 +565,6 @@
 				<li Class="AlienRace.LifeStageAgeAlien">
 					<def>HumanlikeBaby</def>
 					<minAge>0</minAge>
-					<customDrawSize>(0.5,0.5)</customDrawSize>
-					<customHeadDrawSize>(0.5,0.5)</customHeadDrawSize>
 				</li>
 				<!-- <li Class="AlienRace.LifeStageAgeAlien">
 					<def>SlimelikeToddler</def>
@@ -548,14 +573,8 @@
 					<customHeadDrawSize>(0.6,0.6)</customHeadDrawSize>
 				</li> -->
 				<li Class="AlienRace.LifeStageAgeAlien">
-					<def>SlimelikeChild</def>
+					<def>HumanlikeChild</def>
 					<minAge>1</minAge>
-					<customDrawSize>(0.7,0.7)</customDrawSize>
-					<customHeadDrawSize>(0.7,0.7)</customHeadDrawSize>
-					<soundWounded>Pawn_Rodent_Wounded</soundWounded>
-					<soundDeath>Pawn_Rodent_Death</soundDeath>
-					<soundCall>Pawn_Rodent_Call</soundCall>
-					<soundAngry>Pawn_Rodent_Angry</soundAngry>
 				</li>
 				<li Class="AlienRace.LifeStageAgeAlien">
 					<def>SlimelikeTeenager</def>
@@ -641,7 +660,7 @@
 		</silhouetteGraphicData>
 	</LifeStageDef> -->
 
-	<LifeStageDef ParentName="HumanlikeAdolescent">
+	<!-- <LifeStageDef ParentName="HumanlikeAdolescent">
 		<defName>SlimelikeChild</defName>
 		<label>child</label>
 		<workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeChild</workerClass>
@@ -654,14 +673,12 @@
 		<statFactors>
 			<MoveSpeed>0.65</MoveSpeed>
 		</statFactors>
-		<!-- <milkable>true</milkable>
-		<shearable>true</shearable> -->
 		<silhouetteGraphicData>
 			<texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1</drawSize>
 		</silhouetteGraphicData>
-	</LifeStageDef>
+	</LifeStageDef> -->
 
 	<LifeStageDef ParentName="HumanlikeAdolescent">
 		<defName>SlimelikeTeenager</defName>

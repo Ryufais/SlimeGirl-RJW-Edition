@@ -10,9 +10,9 @@
       },
       "Krafs.Rimworld.Ref": {
         "type": "Direct",
-        "requested": "[1.6.4633, )",
-        "resolved": "1.6.4633",
-        "contentHash": "wbUZCLBFHnNJ9IT4ighta1wrsBI9i/gRrfixPNfsMLlPvd/lksz+yv8H3Os7EIpT3O3wOkXgN3LGt8UHncWpzQ=="
+        "requested": "[1.6.4871, )",
+        "resolved": "1.6.4871",
+        "contentHash": "aKebbihZfq47VI9UgyEdrnYslEDeMK3l9+QwC21zL6noJCOLlr5D4+jvhP/F5UA9q+9YVkuTx3NH3eJ03/ivlA=="
       },
       "Lib.Harmony": {
         "type": "Direct",
