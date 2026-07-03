@@ -338,3 +338,6 @@ ASALocalRun/
 
 #dds files
 *.dds
+
+#7zip files
+*.7z
