@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- (U) Blowjob -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Blowjob_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.1531729, 0, -0.1444201)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (V) Mating Press -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_MatingPress_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(-0.06564552, 0, -0.07439825)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (U) Boobjob BEV -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Boobjob_BEV_Top"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0, 0.1006565, -0.1531729)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (V) Cowgirl -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Cowgirl_UAP_Rider"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.1181619, 0, -0.1094092)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (A) Doggystyle BEV [Condom], [Cum Inside], && [Cum Outside] 
+	 	 (V) Missionary BEV [Cum Inside] && [Cum Outside] -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Doggystyle_BEV_Top"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.03363457, 0, -0.1794311)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (A) Doggystyle 
+	     (V) Doggystyle [Chained] 
+		 (V) Doggystyle [SS] -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Doggystyle_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.03063457, 0, 0.08315098)</offset>
+				<rotation>-16</rotation>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (U) Lovin Blowjob -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Lovin_Blowjob_BEV_Top"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.03063457, 0, 0.1794311)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (V) Missionary BEV [Condom] -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Missionary_BEV_Top"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.0031291, 0, -0.1706783)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (V) Missionary [Chained] && [SS] -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_MSS_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.03063457, 0, -0.07439825)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (V) Missionary -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Missionary_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.1094092, 0, -0.09190372)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (A) Pronebone
+	 	 (A) Pronebone [Slave] -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Pronebone_2D_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.1181619, 0, 0.1094092)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (A) Pronebone [SS] -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Pronebone_UAP_Front"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.0131291, 0, 0.1094092)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (U) Sixtynine -->
+	<Operation Class="PatchOperationAdd" mods="!Nals.RealisticBody">
+		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Sixtynine_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(-0.1181619, 0, -0.06564552)</offset>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

@@ -26,7 +26,7 @@
 			<li>FireWeakness</li>
 			<li>ToxResist_Total</li>
 			<li>Libido_High</li>
-			<li>UVSensitivity_Mild</li>		
+			<li>UVSensitivity_Mild</li>			
 		</genes>
 		<!-- <factionlessGenerationWeight>0</factionlessGenerationWeight> -->
 	</XenotypeDef>

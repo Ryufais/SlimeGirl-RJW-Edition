@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Rimworld_Animations.GroupAnimationDef[defName="GroupAnimation_MissionaryInside_BEV"]/offsetDefs</xpath>
+		<value>
+			<offsetDefs>
+				<li>OffsetDef_Missionary_BEV_Bottom</li>
+				<li>OffsetDef_Missionary_BEV_Top</li>
+			</offsetDefs>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Rimworld_Animations.GroupAnimationDef[defName="GroupAnimation_MissionaryOutside_BEV"]/offsetDefs</xpath>
+		<value>
+			<offsetDefs>
+				<li>OffsetDef_Missionary_BEV_Bottom</li>
+				<li>OffsetDef_Missionary_BEV_Top</li>
+			</offsetDefs>
+		</value>
+	</Operation>
+
+</Patch>

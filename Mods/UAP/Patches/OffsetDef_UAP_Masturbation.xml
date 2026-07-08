@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOPerationSequence">
+		<operations>
+			<!-- Masturbation Use Anus -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Female_Masturbation_Anus"]/offsets</xpath>
+				<value>
+					<li Class="Rimworld_Animations.AnimationOffset_Single">
+						<races>
+							<li>Rjw_Slime_Blue</li>
+						</races>
+						<offset>(0.03063457, 0, -0.2757111)</offset>
+					</li>
+				</value>
+			</li>
+
+			<!-- Masturbation Use Vagina -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Female_Masturbation_Vagina"]/offsets</xpath>
+				<value>
+					<li Class="Rimworld_Animations.AnimationOffset_Single">
+						<races>
+							<li>Rjw_Slime_Blue</li>
+						</races>
+						<offset>(0, 0, -0.1269147)</offset>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

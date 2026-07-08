@@ -13,5 +13,7 @@
 		<li>1.6</li>
 		<li IfModActive="gguake.apparelbodyresolver">Mods/ApparelBodyTypeResolver</li>
 		<li IfModActive="Ludeon.RimWorld.Biotech">Mods/Biotech</li>
+		<li IfModActive="Teacher.UAP">Mods/UAP</li>
+		<li IfModActiveAll="SizedApparel.Realistic.Body,Teacher.UAP">Mods/Realistic Body/UAP</li>	
 	</v1.6>
 </loadFolders>

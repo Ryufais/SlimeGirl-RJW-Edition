@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--        v Clothes v          -->
+	<Rimworld_Animations.TexPathVariantsDef>
+		<defName>TexPathVariants_Female_Bra_Blue</defName>
+		<variants>
+			<li>AnimationProps/UAP/Clothes/Underwear/Blue/Female_Bra_Blue_Up</li>
+		</variants>
+	</Rimworld_Animations.TexPathVariantsDef>
+	
+	<Rimworld_Animations.TexPathVariantsDef>
+		<defName>TexPathVariants_Female_Panties_Blue</defName>
+		<variants>
+			<li>AnimationProps/UAP/Clothes/Underwear/Blue/Female_Panties_Blue_Up</li>
+		</variants>
+	</Rimworld_Animations.TexPathVariantsDef>
+
+	<Rimworld_Animations.TexPathVariantsDef>
+		<defName>TexPathVariants_Female_Bra_Blue2</defName>
+		<variants>
+			<li>AnimationProps/UAP/Clothes/Underwear/Blue/Female_Bra_Blue_Down</li>
+		</variants>
+	</Rimworld_Animations.TexPathVariantsDef>
+	
+	<Rimworld_Animations.TexPathVariantsDef>
+		<defName>TexPathVariants_Female_Panties_Blue2</defName>
+		<variants>
+			<li>AnimationProps/UAP/Clothes/Underwear/Blue/Female_Panties_Blue_Down</li>
+		</variants>
+	</Rimworld_Animations.TexPathVariantsDef>
+	
+	<!--        ^ Clothes ^          -->
+</Defs>
