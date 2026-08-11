@@ -2,23 +2,26 @@
 <Patch>
 
 	<!-- (U) Blowjob [BEV] -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Rape_Blowjob_BEV_Top"]/offsets</xpath>
-		<value>
-			<li Class="Rimworld_Animations.AnimationOffset_Single" MayRequire="RS.SL">
-				<races>
-					<li>Rjw_Slime_Blue</li>
-				</races>
-				<offset>(-0.03063457, 0, 0.1881838)</offset>
-			</li>
-		</value>
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Rape_Blowjob_BEV_Top"]/offsets</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Rape_Blowjob_BEV_Top"]/offsets</xpath>
+			<value>
+				<li Class="Rimworld_Animations.AnimationOffset_Single">
+					<races>
+						<li>Rjw_Slime_Blue</li>
+					</races>
+					<offset>(-0.03063457, 0, 0.1881838)</offset>
+				</li>
+			</value>
+		</match>
 	</Operation>
 
 	<!-- Doggystyle Threesome BEV -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_DTT_BEV_Bottom"]/offsets</xpath>
+		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_DTT_BEV_Bottom"]/offsets</xpath>
 		<value>
-			<li Class="Rimworld_Animations.AnimationOffset_Single" MayRequire="RS.SL">
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
 				<races>
 					<li>Rjw_Slime_Blue</li>
 				</races>
@@ -29,9 +32,9 @@
 
 	<!-- Missionary Threesome BEV -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_MTT_BEV_Bottom"]/offsets</xpath>
+		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_MTT_BEV_Bottom"]/offsets</xpath>
 		<value>
-			<li Class="Rimworld_Animations.AnimationOffset_Single" MayRequire="RS.SL">
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
 				<races>
 					<li>Rjw_Slime_Blue</li>
 				</races>
