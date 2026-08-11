@@ -153,6 +153,7 @@
 					<bodyTypes>
 						<li>Female</li>
 						<li MayRequire="Ludeon.RimWorld.Biotech">Child</li>
+						<li MayRequire="Ludeon.RimWorld.Biotech">Baby</li>
 					</bodyTypes>
 					<!-- <aliencrowntypes>
 						<li>SlimeFace</li>
@@ -260,10 +261,10 @@
 				<skinColor>(1,1,1,1)</skinColor>
 				<skinShader>Cutout</skinShader>
 				<head>
+					<path>Things/Slime/Heads/SlimeHead_Female</path>
 					<extendedGraphics>
 						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">Things/Slime/Heads/SlimeFace_Normal</Age>
-						<Age For="HumanlikeChild">Things/Slime/Heads/SlimeFace_Normal</Age>
-						<HeadType For="SlimeHeadFemale">Things/Slime/Heads/SlimeHead_Female</HeadType>
+						<Age For="HumanlikeChild" MayRequire="Ludeon.RimWorld.Biotech">Things/Slime/Heads/SlimeFace_Normal</Age>
 						<HeadType For="SlimeHeadAB">Things/Slime/Heads/SlimeHead_AB</HeadType>
 						<HeadType For="SlimeHeadAC">Things/Slime/Heads/SlimeHead_AC</HeadType>
 						<HeadType For="SlimeHeadAD">Things/Slime/Heads/SlimeHead_AD</HeadType>
@@ -279,15 +280,13 @@
 						<HeadType For="SlimeHeadDB">Things/Slime/Heads/SlimeHead_DB</HeadType>
 						<HeadType For="SlimeHeadDC">Things/Slime/Heads/SlimeHead_DC</HeadType>
 						<HeadType For="SlimeHeadDD">Things/Slime/Heads/SlimeHead_DD</HeadType>
-						<Age For="SlimelikeTeenager">Things/Slime/Heads/SlimeHead_Female</Age>
-						<Age For="SlimelikeAdult">Things/Slime/Heads/SlimeHead_Female</Age>
 					</extendedGraphics>
 				</head>
 				<body>
+					<path>Things/Slime/Bodies/Naked_Female</path>
 					<extendedGraphics>
-						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">Things/Slime/Bodies/Baby/NormalSlime</Age>
-						<Age For="HumanlikeChild">Things/Slime/Bodies/Baby/NormalSlime</Age>
-						<BodyType For="Female">Things/Slime/Bodies/Naked_Female</BodyType>
+						<Age For="HumanlikeBaby" MayRequire="Ludeon.RimWorld.Biotech">Things/Slime/Bodies/Naked_Child</Age>
+						<Age For="HumanlikeChild" MayRequire="Ludeon.RimWorld.Biotech">Things/Slime/Bodies/Naked_Child</Age>
 						<BodyType For="AB">Things/Slime/Bodies/Naked_AB</BodyType>
 						<BodyType For="AC">Things/Slime/Bodies/Naked_AC</BodyType>
 						<BodyType For="AD">Things/Slime/Bodies/Naked_AD</BodyType>
@@ -303,14 +302,12 @@
 						<BodyType For="DB">Things/Slime/Bodies/Naked_DB</BodyType>
 						<BodyType For="DC">Things/Slime/Bodies/Naked_DC</BodyType>
 						<BodyType For="DD">Things/Slime/Bodies/Naked_DD</BodyType>
-						<Age For="SlimelikeTeenager">Things/Slime/Bodies/Naked_Female</Age>
-						<Age For="SlimelikeAdult">Things/Slime/Bodies/Naked_Female</Age>
 					</extendedGraphics>
 				</body>
 				<skeleton>Things/Slime_Corpse</skeleton>
 				<stump>Things/Slime_Corpse</stump>
 				<skull>Things/Slime_Corpse</skull>
-				<swaddle>Things/Slime/Bodies/Baby/Naked_SlimeBody</swaddle>
+				<swaddle>Things/Slime/SwaddledBaby/Swaddled_Child</swaddle>
 
 				<!-- <li>
 					<body>Things/Slime/Bodies/</body>
