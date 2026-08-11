@@ -454,6 +454,7 @@
 			<MoveSpeed>4</MoveSpeed>
 			<Wildness>0.38</Wildness>
 			<Flammability>0.0</Flammability>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 			<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 			<ComfyTemperatureMax>45</ComfyTemperatureMax>
 			<ImmunityGainSpeed>3</ImmunityGainSpeed>
