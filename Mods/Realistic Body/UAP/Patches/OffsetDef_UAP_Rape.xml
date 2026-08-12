@@ -17,30 +17,4 @@
 		</match>
 	</Operation>
 
-	<!-- Doggystyle Threesome BEV -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_DTT_BEV_Bottom"]/offsets</xpath>
-		<value>
-			<li Class="Rimworld_Animations.AnimationOffset_Single">
-				<races>
-					<li>Rjw_Slime_Blue</li>
-				</races>
-				<offset>(0.03463457, 0, -0.2494529)</offset>
-			</li>
-		</value>
-	</Operation>
-
-	<!-- Missionary Threesome BEV -->
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_MTT_BEV_Bottom"]/offsets</xpath>
-		<value>
-			<li Class="Rimworld_Animations.AnimationOffset_Single">
-				<races>
-					<li>Rjw_Slime_Blue</li>
-				</races>
-				<offset>(0.03463457, 0, -0.2319475)</offset>
-			</li>
-		</value>
-	</Operation>
-
 </Patch>

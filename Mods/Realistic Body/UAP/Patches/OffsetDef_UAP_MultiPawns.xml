@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- Doggystyle Threesome BEV -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_DTT_BEV_Bottom"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.03463457, 0, -0.2494529)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- Missionary Threesome BEV -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_MTT_BEV_Bottom"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.00188184, 0, -0.2319475)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- D_Switch_MFF_BEV -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_D_MFF_BEV_Female"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.03438731, 0, -0.214442)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_D_MFF_BEV_Female2"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.03438731, 0, -0.214442)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- M_Switch_MFF_BEV -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_M_MFF_BEV_Female"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.0031291, 0, -0.2582057)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_M_MFF_BEV_Female2"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.0031291, 0, -0.2582057)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- D_Switch_MFFF_BEV -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_D_MFFF_BEV_Female"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.03438731, 0, -0.214442)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_D_MFFF_BEV_Female2"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.03438731, 0, -0.214442)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_D_MFFF_BEV_Female3"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.03438731, 0, -0.214442)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- M_Switch_MFFF_BEV -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_M_MFFF_BEV_Female"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.0031291, 0, -0.2582057)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_M_MFFF_BEV_Female2"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.0031291, 0, -0.2582057)</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_M_MFFF_BEV_Female3"]/offsets</xpath>
+        <value>
+            <li Class="Rimworld_Animations.AnimationOffset_Single">
+                <races>
+                    <li>Rjw_Slime_Blue</li>
+                </races>
+                <offset>(0.0031291, 0, -0.2582057)</offset>
+            </li>
+        </value>
+    </Operation>
+
+
+</Patch>

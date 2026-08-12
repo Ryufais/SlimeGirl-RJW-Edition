@@ -69,13 +69,13 @@
 
 	<!-- (A) Doggystyle 
 	     (V) Doggystyle [Chained] 
-		 (V) Doggystyle [SS] -->
+		 (V) Doggystyle [SS] (Old) -->
 	<Operation Class="PatchOperationConditional">
 		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Doggystyle_UAP_Bottom"]/offsets</xpath>
 		<match Class="PatchOperationAdd">
 			<xpath>Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_Doggystyle_UAP_Bottom"]/offsets</xpath>
 			<value>
-				<li Class="Rimworld_Animations.AnimationOffset_Single" MayRequire="RS.SL">
+				<li Class="Rimworld_Animations.AnimationOffset_Single">
 					<races>
 						<li>Rjw_Slime_Blue</li>
 					</races>
@@ -84,6 +84,34 @@
 			</value>
 		</match>
 	</Operation>
+
+	<!-- (V) Doggystyle [Chained] && [SS] -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_DSS_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0.03063457, 0, 0.1094092)</offset>
+			</li>
+		</value>
+	</Operation>
+
+	<!-- (V) Doggystyle [UC] -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/Rimworld_Animations.AnimationOffsetDef[defName="OffsetDef_MUC_UAP_Bottom"]/offsets</xpath>
+		<value>
+			<li Class="Rimworld_Animations.AnimationOffset_Single">
+				<races>
+					<li>Rjw_Slime_Blue</li>
+				</races>
+				<offset>(0, 0, 0.1881838)</offset>
+				<rotation>-7</rotation>
+			</li>
+		</value>
+	</Operation>
+
 
 	<!-- (U) Lovin Blowjob -->
 	<Operation Class="PatchOperationAdd">
