@@ -304,9 +304,9 @@
 						<BodyType For="DD">Things/Slime/Bodies/Naked_DD</BodyType>
 					</extendedGraphics>
 				</body>
-				<skeleton>Things/Slime_Corpse</skeleton>
-				<stump>Things/Slime_Corpse</stump>
-				<skull>Things/Slime_Corpse</skull>
+				<skeleton>Things/Slime/Core/Slime_Core</skeleton>
+				<stump>Things/Slime/SwaddledBaby/Swaddled_Child</stump>
+				<skull>Things/Slime/SwaddledBaby/Swaddled_Child</skull>
 				<swaddle>Things/Slime/SwaddledBaby/Swaddled_Child</swaddle>
 
 				<!-- <li>

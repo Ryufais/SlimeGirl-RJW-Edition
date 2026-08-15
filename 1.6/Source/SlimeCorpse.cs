@@ -11,10 +11,6 @@ namespace SlimeGirl
     [StaticConstructorOnStartup]
     public class SlimeCorpse : Corpse
     {
-        public static readonly string CorpsePath = "Things/Slime_Corpse";
-
-        public static readonly Graphic slimeCorpseTexture = GraphicDatabase.Get<Graphic_Single>(path: CorpsePath, shader: ShaderDatabase.Cutout, drawSize: new Vector2(2, 2), color: Color.white);
-
         private List<BodyPartRecord> _corePartsCache;
         public List<BodyPartRecord> CoreParts
         {
@@ -73,16 +69,7 @@ namespace SlimeGirl
         public override void TickRare()
         {
             base.TickRare();
-            if (Destroyed)
-            {
-                return;
-            }
-            if (Bugged)
-            {
-                ModLog.Error(this + " has null innerPawn. Destroying.");
-                Destroy(DestroyMode.Vanish);
-                return;
-            }
+           
             Pawn pawn = InnerPawn;
             var hediff = pawn?.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.Hediff_Slime);
             var comp = hediff?.TryGetComp<HediffComp_DeathCounter>();
@@ -149,11 +136,7 @@ namespace SlimeGirl
             //}
             return stringBuilder.ToString().TrimEndNewlines();
         }
-        public override void DynamicDrawPhaseAt(DrawPhase draw, Vector3 drawLoc, bool flip = false)
-        {
-            slimeCorpseTexture.Draw(drawLoc, Rot4.North, this, 0f);
-        }
-
+       
         public bool IsCoreDestroyed(Pawn pawn)
         {
             var parts = CoreParts;

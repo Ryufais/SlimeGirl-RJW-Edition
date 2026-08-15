@@ -2,7 +2,7 @@
 <Defs>
 	<ThingDef Name="BodyPartSlimeNaturalBase" ParentName="BodyPartBase"  Abstract="True">
 		<graphicData>
-			<texPath>Things/Slime_Corpse</texPath>
+			<texPath>Things/Slime/Core/Slime_Core</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>0.80</drawSize>
 		</graphicData>
