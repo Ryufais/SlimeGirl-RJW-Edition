@@ -21,7 +21,7 @@
 				<canLayDown>true</canLayDown>
 				<maxDamageForSocialfight>8</maxDamageForSocialfight>
 				<humanRecipeImport>true</humanRecipeImport>
-				<immuneToXenophobia>true</immuneToXenophobia>
+				<immuneToXenophobia>false</immuneToXenophobia>
 				<minAgeForAdulthood>5</minAgeForAdulthood>
 				<growthAges MayRequire="Ludeon.RimWorld.Biotech">
 					<li>1</li>

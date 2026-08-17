@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<FactionDef ParentName="FactionBase" Name="Slime_FactionBase" Abstract="True" >
+	<FactionDef ParentName="FactionBase" Name="Slime_FactionBase" Abstract="True">
 		<colorSpectrum>
-		  <li>(1, 1, 1)</li>
+			<li>(1, 1, 1)</li>
 		</colorSpectrum>
 		<melaninRange>0</melaninRange>
 		<!-- <xenotypeSet>
@@ -62,6 +62,15 @@
 		<pawnsPlural>subjects</pawnsPlural>
 		<leaderTitle>Prime Nucleus</leaderTitle>
 		<basicMemberKind>Slime</basicMemberKind>
+		<requiredMemes>
+			<li>Nudism</li>
+		</requiredMemes>
+		<disallowedMemes>
+			<li>Blindsight</li>
+			<li>Transhumanist</li>
+			<li>HighLife</li>
+			<li>MaleSupremacy</li>
+		</disallowedMemes>
 		<factionNameMaker>NamerFactionSlime</factionNameMaker>
 		<settlementNameMaker>NamerSettlementSlime</settlementNameMaker>
 		<allowedCultures>
