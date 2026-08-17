@@ -211,49 +211,38 @@
 				<disallowedTraits>
 					<li>
 						<defName Degree="-1">Beauty</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName Degree="-2">Beauty</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName>AnnoyingVoice</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName>CreepyBreathing</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName>DislikesMen</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName>DislikesWomen</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName>Pyromaniac</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName Degree="-1">DrugDesire</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName Degree="1">DrugDesire</defName>
-						<chance>100</chance>
 					</li>
 					<li>
 						<defName Degree="2">DrugDesire</defName>
-						<chance>100</chance>
 					</li>
 				</disallowedTraits>
 				<forcedRaceTraitEntries>
 					<li>
 						<defName Degree="2">NaturalMood</defName>
-						<chance>100</chance>
 					</li>
 				</forcedRaceTraitEntries>
 			</generalSettings>
@@ -391,22 +380,10 @@
 				</apparelList>
 				<whiteApparelList>
 				</whiteApparelList>
+				<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
 				<xenotypeList>
 					<li MayRequire="Ludeon.RimWorld.Biotech">SLXenotype</li>
 				</xenotypeList>
-
-				<blackXenotypeList MayRequire="Ludeon.RimWorld.Biotech">
-					<li MayRequire="Ludeon.RimWorld.Biotech">Dirtmole</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Genie</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Hussar</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Sanguophage</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Neanderthal</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Pigskin</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Impid</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Waster</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Yttakin</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Highmate</li>
-				</blackXenotypeList>
 
 				<blackEndoCategories>
 					<li>Melanin</li>
@@ -421,10 +398,7 @@
 				</blackEndoCategories>
 
 				<blackGeneList>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Furskin</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">Brow_Heavy</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Hair_BaldOnly</li>
-					<li MayRequire="Ludeon.RimWorld.Biotech">Beard_Always</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">FacialRidges</li>
 				</blackGeneList>
 
@@ -434,6 +408,7 @@
 					<li MayRequire="Ludeon.RimWorld.Biotech">Tail</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">BeardStyle</li>
 					<li MayRequire="Ludeon.RimWorld.Biotech">Fur</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">HairStyle</li>
 				</blackGeneTags>
 			</raceRestriction>
 			<thoughtSettings>
