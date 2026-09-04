@@ -242,6 +242,9 @@
 				</disallowedTraits>
 				<forcedRaceTraitEntries>
 					<li>
+						<defName>Nudist</defName>
+					</li>
+					<li>
 						<defName Degree="2">NaturalMood</defName>
 					</li>
 				</forcedRaceTraitEntries>
@@ -413,7 +416,7 @@
 			</raceRestriction>
 			<thoughtSettings>
 				<cannotReceiveThoughts>
-					<li>Naked</li>
+					<li>HappyNude</li>
 					<li>AteWithoutTable</li>
 					<li>SleptOutside</li>
 					<li>SleptOnGround</li>
